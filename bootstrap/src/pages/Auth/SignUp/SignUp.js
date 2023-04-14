@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const SignIn = () => {
+const SignUp = () => {
     return ( 
         <>
             <Container fluid className="px-full py-0 mx-0">
@@ -22,35 +22,35 @@ const SignIn = () => {
                                 <div className="text-center text-uppercase">
                                     <h1 className="text-dark text-center mb-5">
                                         <span className="font-29 d-block mb-3 fw-medium">
-                                            Signin
+                                            Signup
                                         </span>
-                                        <span className="font-18 text-secondary d-block">
-                                            Welcome Back! <br />
-                                        </span>  
                                     </h1>
                                 </div>
                                 <Form className='user'>
-                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Group className="mb-3">
+                                        <Form.Control type="text" className='font-13 form-h' placeholder="Full Name" />
+                                    </Form.Group>
+
+                                    <Form.Group className="mb-3">
                                         <Form.Control type="email" className='font-13 form-h' placeholder="Email ID" />
                                     </Form.Group>
 
-                                    <Form.Group className="mb-4" controlId="formBasicPassword">
+                                    <Form.Group className="mb-3">
                                         <Form.Control type="password" className='font-13 form-h' placeholder="Password" />
                                     </Form.Group>
 
+                                    <Form.Group className="mb-4">
+                                        <Form.Control type="password" className='font-13 form-h' placeholder="Confirm Password" />
+                                    </Form.Group>
+
                                     <div className="mb-3 text-center">
-                                        <Link to='/dashboard' className='btn btn-primary font-14 rounded-20 text-uppercase w-100 fw-medium'>
-                                            Sign in
-                                        </Link>
-                                    </div>
-                                    <div className="mb-3 text-center">
-                                        <Link to='/auth/register' className='btn btn-outline-primary font-14 rounded-20 text-uppercase w-100 fw-medium'>
+                                        <Link to='/auth/login' className='btn btn-primary font-14 rounded-20 text-uppercase w-100 fw-medium'>
                                             Sign up
                                         </Link>
                                     </div>
-                                    <div className='text-center'>
-                                        <Link className='font-12 text-dark' to='/auth/forgot-password'>
-                                            Forgot Password? 
+                                    <div className="mb-3 text-center">
+                                        <Link to='/auth/login' className='btn btn-outline-primary font-14 rounded-20 text-uppercase w-100 fw-medium'>
+                                            Login
                                         </Link>
                                     </div>
                                 </Form>
@@ -63,4 +63,4 @@ const SignIn = () => {
     );
 }
  
-export default SignIn;
+export default SignUp;

@@ -41,9 +41,13 @@
 /* Custom CSS Starts */
 body {
   font-family: 'Montserrat', sans-serif;
+  color: #000;
 }
 .rounded-20 {
   border-radius: 20px;
+}
+.font-12 {
+  font-size: 12px;
 }
 .font-29 {
   font-size: 29px;
