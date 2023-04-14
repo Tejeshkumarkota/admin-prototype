@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import PublicRoutes from './Navigation/PublicRoutes/PublicRoutes';
 
