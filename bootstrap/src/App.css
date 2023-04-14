@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #f8f9fa;
 }
 
 .App-logo {
@@ -36,3 +37,76 @@
     transform: rotate(360deg);
   }
 }
+
+/* Custom CSS Starts */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.rounded-20 {
+  border-radius: 20px;
+}
+.font-29 {
+  font-size: 29px;
+}
+.fw-medium {
+  font-weight: 500;
+}
+.font-18 {
+  font-size: 18px;
+}
+.font-13 {
+  font-size: 13px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.nav-link, 
+a {
+  color: #356093;
+}
+.form-control, 
+.form-select {
+  border-color: #DBDBDB;
+  padding: 7px 12px;
+  line-height: 20px;
+}
+.form-h {
+  height: 46px;
+  border: 0;
+  background-color: #F7F7F7;
+  border-radius: 0;
+  border-left: 5px solid #356093;
+}
+.form-control.form-h:focus {
+  background-color: #F7F7F7;
+  border-color: #356093;
+  box-shadow: none;
+}
+.btn-primary, 
+.btn-primary:disabled, 
+.btn-primary.disabled {
+  background-color: #356093;
+  border-color: transparent;
+}
+.btn-outline-primary {
+  color: #356093;
+  border-color: #356093;
+  background-color: #ffffff;
+}
+.btn {
+  padding: 0.5rem;
+}
+.btn-check:focus + .btn, 
+.btn:focus {
+  outline: 0;
+  box-shadow: initial;
+}
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-outline-primary:hover, 
+.btn-outline-primary:focus {
+  background-color: rgba(53, 96, 147, 0.80);
+  border-color: transparent;
+  color: #fff;
+}
+/* Custom CSS End */
