@@ -66,6 +66,9 @@ body {
 .font-14 {
   font-size: 14px;
 }
+.font-16 {
+  font-size: 16px;
+}
 .nav-link, 
 a {
   color: #356093;
@@ -160,4 +163,11 @@ a {
   color: #5b66e6;
   background-color: #f0f1ff;
 }
+/* Alert Styles */
+.alert-dismissible .btn-close {
+  font-size: 13px;
+  box-shadow: none;
+  outline: 0;
+}
+/* Alert Styles End */
 /* Custom CSS End */
