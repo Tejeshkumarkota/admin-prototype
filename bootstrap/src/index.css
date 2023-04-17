@@ -8,3 +8,10 @@ body {
 code {
   font-family: 'Montserrat', sans-serif;
 }
+
+.inner-text{
+  position: absolute;
+  right: 48%;
+  top: 62%;
+  text-align: center;
+}
