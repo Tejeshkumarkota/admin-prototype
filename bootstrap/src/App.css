@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   background-color: #f8f9fa;
 }
 
@@ -58,6 +57,9 @@ body {
 .font-18 {
   font-size: 18px;
 }
+.font-22 {
+  font-size: 22px;
+}
 .font-13 {
   font-size: 13px;
 }
@@ -112,5 +114,28 @@ a {
   background-color: rgba(53, 96, 147, 0.80);
   border-color: transparent;
   color: #fff;
+}
+.card {
+  border: 1px solid #E8E8E8;
+  border-radius: 8px;
+}
+.card-body {
+  padding: 20px;
+}
+.custom-modal .modal-title {
+  color: #fff;
+  font-size: 1.25rem;
+}
+.custom-modal .modal-header {
+  background-color: #356093;
+}
+.custom-modal .modal-content {
+  border: none;
+}
+.custom-modal .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+  outline: 0;
+  box-shadow: none;
 }
 /* Custom CSS End */
