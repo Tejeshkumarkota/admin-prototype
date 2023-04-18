@@ -11,8 +11,8 @@ import ForgotPassword from '../../pages/Auth/ForgotPassword/ForgotPassword';
 import ModalPopup from '../../pages/Components/Modal/ModalPopup';
 import AccordionBootstrap from '../../pages/Components/Accordion/AccordionBootstrap';
 import {ChartsWrapper} from '../../pages/Charts/ChartsWrapper';
-// import {GanttChartWrapper} from'../../pages/Charts/GanttChart/GanttChartWrapper';
-// import {DxSchedular} from "../../pages/Charts/DxSchedular/DxSchedular";
+import {GanttChartWrapper} from'../../pages/Charts/GanttChart/GanttChartWrapper';
+import {DxSchedular} from "../../pages/Charts/DxSchedular/DxSchedular";
 import AlertBootstrap from '../../pages/Components/Alert/AlertBootstrap';
 
 const PublicRoutes = () => {
@@ -28,8 +28,8 @@ const PublicRoutes = () => {
                 <Route exact path='/components/alert' element={<AlertBootstrap />}></Route>
                 <Route exact path='/' element={<Home />}></Route>
                 <Route exact path='/carts' element={<ChartsWrapper />}></Route>
-                {/* <Route exact path='/gantt-chart' element={<GanttChartWrapper />}></Route> */}
-                {/* <Route exact path='/dx-schedular' element={<DxSchedular />}></Route> */}
+                <Route exact path='/gantt-chart' element={<GanttChartWrapper />}></Route> 
+                <Route exact path='/dx-schedular' element={<DxSchedular />}></Route>
             </Routes>
         </Router>
         </>
