@@ -27,7 +27,7 @@ const PublicRoutes = () => {
                 <Route exact path='/components/accordion' element={<AccordionBootstrap />}></Route>
                 <Route exact path='/components/alert' element={<AlertBootstrap />}></Route>
                 <Route exact path='/' element={<Home />}></Route>
-                <Route exact path='/carts' element={<ChartsWrapper />}></Route>
+                <Route exact path='/charts' element={<ChartsWrapper />}></Route>
                 <Route exact path='/gantt-chart' element={<GanttChartWrapper />}></Route> 
                 <Route exact path='/dx-schedular' element={<DxSchedular />}></Route>
             </Routes>

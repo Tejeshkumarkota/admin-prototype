@@ -1,0 +1,44 @@
+:root {
+	--bs-font-sans-serif: "Roboto",Helvetica,sans-serif;
+	--bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+	--bs-body-font-family: 'Montserrat', sans-serif ;
+	--bs-secondary-font-family:  'Poppins', sans-serif ;
+	--bs-body-font-size: 0.875rem;
+	--bs-form-font-size: 0.875rem;
+	--bs-gray-color:#f7f7f7;
+	--bg-primary:#e6b27d;
+	--bg-secondary:#3f3e45;
+	--bg-primary-hover:#4d4d4d;
+	--bg-black: #0c0c0c;
+	--bg-white: #ffffff;
+	--bg-light: #f8f9fa;
+}
+body {
+  background-color: #fff;
+  color: #222;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+.Wrapper {
+	display: flex;
+}
+.header {
+	display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+	background-color: var(--bg-secondary);
+	min-height: 100vh;
+	@media (min-width: 768px) {
+		width: 14rem !important;
+	}
+}
+.topbar {
+	width: 100%;
+	height: 64px;
+	background-color: #fff;
+
+}
