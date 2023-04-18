@@ -6,7 +6,7 @@
 	--bs-body-font-size: 0.875rem;
 	--bs-form-font-size: 0.875rem;
 	--bs-gray-color:#f7f7f7;
-	--bg-primary:#e6b27d;
+	--bg-primary:#356093;
 	--bg-secondary:#3f3e45;
 	--bg-primary-hover:#4d4d4d;
 	--bg-black: #0c0c0c;
@@ -16,6 +16,7 @@
 body {
   background-color: #fff;
   color: #222;
+  font-family: 'Montserrat', sans-serif;
 }
 * {
 	margin: 0;
@@ -23,22 +24,111 @@ body {
 }
 .Wrapper {
 	display: flex;
+	.ContentWrapper {
+		background-color: #f8f9fc;
+		width: 100%;
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+		.Content {
+			flex: 1 0 auto;
+			.topbar {
+				height: 4.375rem;
+				margin-bottom: 1.5rem;
+				box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+				background-color: #fff;
+				flex-flow: row nowrap;
+    			justify-content: flex-start;
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0.5rem 1rem;
+			}
+			.container-fluid {
+				padding: 0px 24px 24px;
+			}
+		}
+	}
 }
-.header {
+.sidebar {
 	display: flex;
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-	background-color: var(--bg-secondary);
+	background-color: var(--bg-primary);
 	min-height: 100vh;
 	@media (min-width: 768px) {
-		width: 14rem !important;
+		width: 300px;
+	}
+	.logo {
+		height: 4.375rem;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-right: 1px solid #e5e5e5;
+		box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+		img {
+			width: 110px;
+    		height: 35px;
+		}
+	}
+	.nav {
+		.nav-item {
+			margin-bottom: 5px;
+			margin-top: 5px;
+			&:first-child {
+				margin-top: 15px;
+			}
+			a {
+				color: rgba(255,255,255,0.6);
+				display: flex;
+				align-items: center;
+				position: relative;
+				text-decoration: none;
+				padding: 0.75rem 1.5rem;
+				font-size: 15px;
+				font-weight: 400;
+				margin-left: 1rem;
+				margin-right: 1rem;
+				&:hover, &[activeClassName="active"] {
+					color: #fff;
+				}
+			}
+			.collapse, .collapsing {
+				background-color: #fff;
+				border-radius: 6px;
+				color: #000;
+				margin-left: 1rem;
+				margin-right: 1rem;
+				padding: 0.5rem 0.5rem;
+				a {
+					color: #000;
+					padding: 8px 0px;
+				}
+			}
+			.nav-drop {
+				position: relative;
+				&:after {
+					content: "";
+					position: absolute;
+					border: solid rgba(255,255,255,0.6);
+					border-width: 0 3px 3px 0;
+					display: inline-block;
+					padding: 3px;
+					transform: rotate(-45deg);
+					-webkit-transform: rotate(-45deg);
+					right: 0;
+				}
+			}
+		}
 	}
 }
 .topbar {
 	width: 100%;
 	height: 64px;
 	background-color: #fff;
-
 }
