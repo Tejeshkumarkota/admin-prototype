@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import {
-    Row, 
-    Col,
     Button,
     Modal
 } from 'react-bootstrap';
