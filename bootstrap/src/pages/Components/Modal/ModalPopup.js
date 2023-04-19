@@ -14,6 +14,41 @@ import ViewCodeButton from '../ViewCodeButton/ViewCodeButton';
 const ModalPopup = () => {
 
     const [show, setShow] = useState(false);
+  
+    const NavData=[
+      {
+        title:'Alert Primary',
+        link:'/alert-primary',
+        show_content:`<Alert
+        variant="primary"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
+      },
+      {
+        title:'Alert Danger',
+        link:'/alert-danger',
+        show_content:`<Alert
+        variant="danger"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
+      },
+    ];
 
     return ( 
         <>
@@ -49,7 +84,7 @@ const ModalPopup = () => {
 
                 </Modal.Body>
             </Modal> */}
-            <ViewCodePopup show={show} setShow={setShow} comp={'Modal'} />
+            <ViewCodePopup show={show} setShow={setShow} NavData={NavData} />
         </>
     );
 }

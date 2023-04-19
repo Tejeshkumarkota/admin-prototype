@@ -302,3 +302,12 @@ a {
   }
 }
 /* Alert Styles End */
+// Nav Styles Start
+.nav-tabs.popup-nav-code {
+  .nav-item,
+  .nav-link {
+    flex-basis: inherit;
+    flex-grow: inherit;
+  }
+}
+// Nav Styles End
