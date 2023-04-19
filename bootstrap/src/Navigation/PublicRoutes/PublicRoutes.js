@@ -15,13 +15,15 @@ import {ChartsWrapper} from '../../pages/Charts/ChartsWrapper';
 import {GanttChartWrapper} from'../../pages/Charts/GanttChart/GanttChartWrapper';
 import {DxSchedular} from "../../pages/Charts/DxSchedular/DxSchedular";
 import AlertBootstrap from '../../pages/Components/Alert/AlertBootstrap';
+import CardBootstrap from '../../pages/Components/Card/CardBootstrap';
+import CarouselBootstrap from '../../pages/Components/Carousel/CarouselBootstrap';
 import {FloorPlanAdmin} from '../../pages/Floor/DXDiagram/FloorPlanAdmin';
 import Header from '../../pages/Layout/Header/Header';
 import Sidebar from '../../pages/Layout/Sidebar/Sidebar';
 
 const PublicRoutes = () => {
     let location = useLocation();
-    return ( 
+    return (
         <>
         {/* Before Login */}
         {(location.pathname === '/auth/login') || (location.pathname === '/auth/forgot-password') || (location.pathname === '/auth/register') ?
@@ -43,9 +45,11 @@ const PublicRoutes = () => {
                                 <Route exact path='/components/modal' element={<ModalPopup />}></Route>
                 <Route exact path='/components/accordion' element={<AccordionBootstrap />}></Route>
                 <Route exact path='/components/alert' element={<AlertBootstrap />}></Route>
+                <Route exact path='/components/card' element={<CardBootstrap />}></Route>
+                <Route exact path='/components/carousel' element={<CarouselBootstrap />}></Route>
                 <Route exact path='/dashboard' element={<Home />}></Route>
                 <Route exact path='/charts' element={<ChartsWrapper />}></Route>
-                <Route exact path='/gantt-chart' element={<GanttChartWrapper />}></Route> 
+                <Route exact path='/gantt-chart' element={<GanttChartWrapper />}></Route>
                 <Route exact path='/dx-schedular' element={<DxSchedular />}></Route>
             <Route exact path='/floor-plan-admin' element={<FloorPlanAdmin />}></Route>
             </Routes>

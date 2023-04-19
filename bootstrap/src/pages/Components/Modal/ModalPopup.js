@@ -8,13 +8,12 @@ import {
 } from 'react-bootstrap';
 import CustomModal from '../Modal/CustomModal/CustomModal';
 import { BsCodeSlash } from "react-icons/bs";
+import ViewCodePopup from '../ViewCodePopup/ViewCodePopup';
+import ViewCodeButton from '../ViewCodeButton/ViewCodeButton';
 
 const ModalPopup = () => {
 
     const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     return ( 
         <>
@@ -25,9 +24,10 @@ const ModalPopup = () => {
                             <h1 className="fw-medium font-22">Modal</h1>
                         </Col>
                         <Col xs={12} sm={12} md={5} className='text-end'>
-                            <Button onClick={handleShow} variant="outline-primary" type="button" className="py-1 px-2 btn-sm">
+                            {/* <Button onClick={handleShow} variant="outline-primary" type="button" className="py-1 px-2 btn-sm">
                                 <BsCodeSlash />
-                            </Button>
+                            </Button> */}
+                            <ViewCodeButton show={show} setShow={setShow} />
                         </Col>
                     </Row>
                 </Col>
@@ -41,14 +41,15 @@ const ModalPopup = () => {
                 </Col>
             </Row>
 
-            <Modal size="xl" show={show} className='custom-modal' onHide={handleClose}>
+            {/* <Modal size="xl" show={show} className='custom-modal' onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>View Code</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
 
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
+            <ViewCodePopup show={show} setShow={setShow} comp={'Modal'} />
         </>
     );
 }

@@ -1,9 +1,47 @@
 import { useState } from "react";
-import { Row, Col, Card, Button, Alert } from "react-bootstrap";
+import { Row, Col, Card, Button, Alert, Nav } from "react-bootstrap";
 import { BsCodeSlash } from "react-icons/bs";
+import ViewCodeButton from "../ViewCodeButton/ViewCodeButton";
+import ViewCodePopup from "../ViewCodePopup/ViewCodePopup";
 
 const AlertBootstrap = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
+  const NavData=[
+    {
+      title:'Alert Primary',
+      link:'/alert-primary',
+      show_content:`<Alert
+      variant="primary"
+      onClose={() => setShow(false)}
+      dismissible
+    >
+      <p className="mb-0 font-14">
+        Change this and that and try again. Duis mollis, est non
+        commodo luctus, nisi erat porttitor ligula, eget lacinia
+        odio sem nec elit. Cras mattis consectetur purus sit amet
+        fermentum.
+      </p>
+    </Alert>`
+    },
+    {
+      title:'Alert Danger',
+      link:'/alert-danger',
+      show_content:`<Alert
+      variant="danger"
+      onClose={() => setShow(false)}
+      dismissible
+    >
+      <p className="mb-0 font-14">
+        Change this and that and try again. Duis mollis, est non
+        commodo luctus, nisi erat porttitor ligula, eget lacinia
+        odio sem nec elit. Cras mattis consectetur purus sit amet
+        fermentum.
+      </p>
+    </Alert>`
+    },
+  ];
+
+
   return (
     <>
       <Row className="mb-4">
@@ -13,13 +51,7 @@ const AlertBootstrap = () => {
               <h1 className="fw-medium font-22">Alerts</h1>
             </Col>
             <Col xs={12} sm={12} md={5} className="text-end">
-              <Button
-                variant="outline-primary"
-                type="button"
-                className="py-1 px-2 btn-sm"
-              >
-                <BsCodeSlash />
-              </Button>
+              <ViewCodeButton show={show} setShow={setShow} />
             </Col>
           </Row>
           <Row>
@@ -130,6 +162,7 @@ const AlertBootstrap = () => {
           </Row>
         </Col>
       </Row>
+      <ViewCodePopup show={show} setShow={setShow} NavData={NavData} />
     </>
   );
 };
