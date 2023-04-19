@@ -14,6 +14,7 @@ import {ChartsWrapper} from '../../pages/Charts/ChartsWrapper';
 import {GanttChartWrapper} from'../../pages/Charts/GanttChart/GanttChartWrapper';
 import {DxSchedular} from "../../pages/Charts/DxSchedular/DxSchedular";
 import AlertBootstrap from '../../pages/Components/Alert/AlertBootstrap';
+import {FloorPlanAdmin} from '../../pages/Floor/DXDiagram/FloorPlanAdmin';
 
 const PublicRoutes = () => {
     return ( 
@@ -30,6 +31,7 @@ const PublicRoutes = () => {
                 <Route exact path='/charts' element={<ChartsWrapper />}></Route>
                 <Route exact path='/gantt-chart' element={<GanttChartWrapper />}></Route> 
                 <Route exact path='/dx-schedular' element={<DxSchedular />}></Route>
+                <Route exact path='/floor-plan-admin' element={<FloorPlanAdmin />}></Route>
             </Routes>
         </Router>
         </>

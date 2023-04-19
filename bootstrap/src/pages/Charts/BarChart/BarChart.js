@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -83,6 +83,8 @@ export function BarChart() {
     ],
   };
 
+  const [sOptions, setSOptions] = useState(["2001", "2002", "2003", "2004", "2005"]);
+
   return (
     <div className="card">
       <div className="card-body">
@@ -93,14 +95,9 @@ export function BarChart() {
           <div className="col-6">
             <div className="d-flex justify-content-end">
               <select className="form-select me-2 chart-select">
-                <option> Select Year </option>
-                <option value="1">2001</option>
-                <option value="2">2002</option>
-                <option value="3">2003</option>
-                <option value="4">2004</option>
-                <option value="5">2005</option>
-                <option value="6">2006</option>
-                <option value="7">2007</option>
+                {sOptions.map((element, index) => (
+                  <option key={index}>{element}</option>
+                ))}
               </select>
               <Link
                 className="btn text-uppercase font-12 py-1 px-2 rounded"
