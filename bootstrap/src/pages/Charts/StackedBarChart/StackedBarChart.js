@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,89 +17,87 @@ import { Bar } from 'react-chartjs-2';
 
 
 export function StackedBarChart() {
-    ChartJS.register(
-        CategoryScale,
-        LinearScale,
-        BarElement,
-        Title,
-        Tooltip,
-        Legend
-      );
-      
-    const options = {
-        plugins: {
-          title: {
-            display: true,
-            ///text: 'Chart.js Bar Chart - Stacked',
-          },
-        },
-        responsive: true,
-        scales: {
-          x: {
-            stacked: true,
-          },
-          y: {
-            stacked: true,
-          },
-        },
-      };
-      
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-      
-    const data = {
-        labels,
-        datasets: [
-          {
-            label: 'Dataset 1',
-            data: [100, 80, 100, 80, 100, 80],
-            backgroundColor: 'rgb(255, 99, 132)',
-          },
-          {
-            label: 'Dataset 2',
-            data: [40, 60, 40, 60, 40, 60],
-            backgroundColor: 'rgb(75, 192, 192)',
-          },
-          {
-            label: 'Dataset 3',
-            data: [100, 20, 100, 30, 100, 40],
-            backgroundColor: 'rgb(53, 162, 235)',
-          },
-        ],
-    };
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+  );
 
-    const [sOptions, setSOptions] = useState(["2001", "2002", "2003", "2004", "2005"]);
+  const options = {
+    plugins: {
+      title: {
+        display: true,
+        ///text: 'Chart.js Bar Chart - Stacked',
+      },
+    },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true,
+      },
+    },
+  };
+
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: [100, 80, 100, 80, 100, 80],
+        backgroundColor: '#00d4d4',
+      },
+      {
+        label: 'Dataset 2',
+        data: [40, 60, 40, 60, 40, 60],
+        backgroundColor: '#ff0058',
+      },
+      {
+        label: 'Dataset 3',
+        data: [100, 20, 100, 30, 100, 40],
+        backgroundColor: '#5c72fe',
+      },
+    ],
+  };
+
+  const [sOptions, setSOptions] = useState(["Select", "2001", "2002", "2003", "2004", "2005"]);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <div className="row mb-3 ">
-          <div className="col-6 text-start">
-            <h5 className="">Stacked Bar Chart</h5>
-          </div>
-          <div className="col-6">
-            <div className="d-flex justify-content-end">
-              <select className="form-select me-2 chart-select">
-                {sOptions.map((element, index) => (
-                  <option key={index}>{element}</option>
-                ))}
-              </select>
-              <Link
-                className="btn text-uppercase font-12 py-1 px-2 rounded"
-                href="javascript:void(0);"
-              >
-                Download
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <div className="m-auto">
-                <Bar options={options} data={data} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Card>
+        <Card.Body>
+          <Row className="align-items-center mb-3">
+            <Col><h6 className="m-0">Stacked Bar Chart</h6></Col>
+            <Col>
+              <Row>
+                <Col>
+                  <Form.Select size="sm" className="py-2">
+                    {sOptions.map((element, index) => (
+                      <option key={index}>{element}</option>
+                    ))}
+                  </Form.Select>
+                </Col>
+                <Col>
+                  <Button variant="outline-secondary" size="sm" className="py-2">Download</Button>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <Bar options={options} data={data} />
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </>
   );
 }

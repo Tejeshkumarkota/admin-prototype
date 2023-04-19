@@ -1,18 +1,22 @@
-import React from "react";
-import { ViewMode, Gantt } from "gantt-task-react";
+import React, { useState } from "react";
+import { Row, Col, Card } from 'react-bootstrap';
+import { Gantt, Task, ViewMode } from "gantt-task-react";
+import "gantt-task-react/dist/index.css";
 import { ViewSwitcher } from "./components/view-switcher";
-import { getStartEndDateForProject, initTasks } from "./components/helper";
+import { getStartEndDateForProject, initTasks } from "./components/Helper.jsx";
+import './components/grunt.css'
 
 const GanttChartWrapper = () => {
-  const [view, setView] = React.useState(ViewMode.Day);
-  const [tasks, setTasks] = React.useState(initTasks());
-  const [isChecked, setIsChecked] = React.useState(true);
-  let columnWidth = 30;
+  const [view, setView] = useState(ViewMode.Day);
+  const [tasks, setTasks] = useState(initTasks());
+  const [isChecked, setIsChecked] = useState(true);
+  let columnWidth = 65;
   if (view === ViewMode.Month) {
     columnWidth = 300;
   } else if (view === ViewMode.Week) {
     columnWidth = 250;
   }
+
   const handleTaskChange = (task) => {
     console.log("On date change Id:" + task.id);
     let newTasks = tasks.map((t) => (t.id === task.id ? task : t));
@@ -32,6 +36,7 @@ const GanttChartWrapper = () => {
     }
     setTasks(newTasks);
   };
+
   const handleTaskDelete = (task) => {
     const conf = window.confirm("Are you sure about " + task.name + " ?");
     if (conf) {
@@ -39,64 +44,71 @@ const GanttChartWrapper = () => {
     }
     return conf;
   };
+
   const handleProgressChange = async (task) => {
     setTasks(tasks.map((t) => (t.id === task.id ? task : t)));
     console.log("On progress change Id:" + task.id);
   };
+
   const handleDblClick = (task) => {
     alert("On Double Click event Id:" + task.id);
   };
+
   const handleSelect = (task, isSelected) => {
     console.log(task.name + " has " + (isSelected ? "selected" : "unselected"));
   };
+
   const handleExpanderClick = (task) => {
     setTasks(tasks.map((t) => (t.id === task.id ? task : t)));
     console.log("On expander click Id:" + task.id);
   };
+
   return (
-    <div className="card">
-        <div className="card-body">
-            <div className="row">
-                <div className="col-12">
-                    <ViewSwitcher
-                        onViewModeChange={(viewMode) => setView(viewMode)}
-                        onViewListChange={setIsChecked}
-                        isChecked={isChecked}
-                    />
-                    <h3>Gantt With Unlimited Height</h3>
-                    <Gantt
-                        tasks={tasks}
-                        // viewMode={view}
-                        // onDateChange={handleTaskChange}
-                        // onDelete={handleTaskDelete}
-                        // onProgressChange={handleProgressChange}
-                        // onDoubleClick={handleDblClick}
-                        // onSelect={handleSelect}
-                        onExpanderClick={handleExpanderClick}
-                        listCellWidth={isChecked ? "155px" : ""}
-                        columnWidth={columnWidth}
-                        barBackgroundColor="blue"
-                        rowHeight={40}
-                        fontSize={12}
-                    />
-                    {/* <h3>Gantt With Limited Height</h3>
-                    <Gantt
-                        tasks={tasks}
-                        viewMode={view}
-                        onDateChange={handleTaskChange}
-                        onDelete={handleTaskDelete}
-                        onProgressChange={handleProgressChange}
-                        onDoubleClick={handleDblClick}
-                        onSelect={handleSelect}
-                        onExpanderClick={handleExpanderClick}
-                        listCellWidth={isChecked ? "155px" : ""}
-                        ganttHeight={300}
-                        columnWidth={columnWidth}
-                    /> */}
-                </div>
-            </div>
-        </div>
-    </div>
+    <>
+      <Row className="mb-4">
+        <Col><h4 className="font-14 fw-boldest text-black mb-0">Gantt Chart</h4></Col>
+      </Row>
+      <Card>
+        <Card.Body>
+          <Row>
+            <Col>
+              <ViewSwitcher
+                onViewModeChange={(viewMode) => setView(viewMode)}
+                onViewListChange={setIsChecked}
+                isChecked={isChecked}
+              />
+              <h5>Gantt With Unlimited Height</h5>
+              <Gantt
+                tasks={tasks}
+                viewMode={view}
+                onDateChange={handleTaskChange}
+                onDelete={handleTaskDelete}
+                onProgressChange={handleProgressChange}
+                onDoubleClick={handleDblClick}
+                onSelect={handleSelect}
+                onExpanderClick={handleExpanderClick}
+                listCellWidth={isChecked ? "155px" : ""}
+                columnWidth={columnWidth}
+              />
+              {/* <h3>Gantt With Limited Height</h3>
+              <Gantt
+                tasks={tasks}
+                viewMode={view}
+                onDateChange={handleTaskChange}
+                onDelete={handleTaskDelete}
+                onProgressChange={handleProgressChange}
+                onDoubleClick={handleDblClick}
+                onSelect={handleSelect}
+                onExpanderClick={handleExpanderClick}
+                listCellWidth={isChecked ? "155px" : ""}
+                ganttHeight={300}
+                columnWidth={columnWidth}
+              /> */}
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </>
   );
 };
 export { GanttChartWrapper };

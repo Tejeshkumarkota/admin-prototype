@@ -10,8 +10,11 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-//import faker from 'faker';
-import { Link } from "react-router-dom";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 export function MixedBarChart() {
   ChartJS.register(
@@ -54,7 +57,7 @@ export function MixedBarChart() {
     },
   };
 
-  const labels = [ "January",    "February",    "March",    "April",    "May",    "June",    "July",];
+  const labels = ["January", "February", "March", "April", "May", "June", "July",];
 
   const data = {
     labels,
@@ -62,53 +65,50 @@ export function MixedBarChart() {
       {
         label: "Dataset 1",
         data: [140, 100, 160, 100, 140, 100,],
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "#ff0058",
+        backgroundColor: "#ff0058",
         yAxisID: "y",
       },
       {
         label: "Dataset 2",
         data: [160, 200, 140, 100, 160, 200,],
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        borderColor: "#00d4d4",
+        backgroundColor: "#00d4d4",
         yAxisID: "y1",
       },
     ],
   };
 
-  const [sOptions, setSOptions] = useState(["2001", "2002", "2003", "2004", "2005"]);
+  const [sOptions, setSOptions] = useState(["select", "2001", "2002", "2003", "2004", "2005"]);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <div className="row mb-3 ">
-          <div className="col-6 text-start">
-            <h5 className="">Mixed bar chart</h5>
-          </div>
-          <div className="col-6">
-            <div className="d-flex justify-content-end">
-              <select className="form-select me-2 chart-select">
-                {sOptions.map((element, index) => (
-                  <option key={index}>{element}</option>
-                ))}
-              </select>
-              <Link
-                className="btn text-uppercase font-12 py-1 px-2 rounded"
-                href="javascript:void(0);"
-              >
-                Download
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <div className="m-auto">
+    <>
+      <Card>
+        <Card.Body>
+          <Row className="align-items-center mb-3">
+            <Col><h6 className="m-0">Mixed bar chart</h6></Col>
+            <Col>
+              <Row>
+                <Col>
+                  <Form.Select size="sm" className="py-2">
+                    {sOptions.map((element, index) => (
+                      <option key={index}>{element}</option>
+                    ))}
+                  </Form.Select>
+                </Col>
+                <Col>
+                  <Button variant="outline-secondary" size="sm" className="py-2">Download</Button>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
               <Line options={options} data={data} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </>
   );
 }

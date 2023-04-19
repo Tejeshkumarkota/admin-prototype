@@ -9,8 +9,11 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-//import faker from "faker";
-import { Link } from "react-router-dom";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 export function BarChart() {
   ChartJS.register(
@@ -34,7 +37,7 @@ export function BarChart() {
       },
     },
   };
-  const labels = [ "January", "February", "March", "April", "May", "June", "July",];
+  const labels = ["January", "February", "March", "April", "May", "June", "July",];
   const data = {
     labels,
     datasets: [
@@ -83,39 +86,36 @@ export function BarChart() {
     ],
   };
 
-  const [sOptions, setSOptions] = useState(["2001", "2002", "2003", "2004", "2005"]);
+  const [sOptions, setSOptions] = useState(["Select", "2001", "2002", "2003", "2004", "2005"]);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <div className="row mb-3 ">
-          <div className="col-6 text-start">
-            <h5 className="">Bar Chart</h5>
-          </div>
-          <div className="col-6">
-            <div className="d-flex justify-content-end">
-              <select className="form-select me-2 chart-select">
-                {sOptions.map((element, index) => (
-                  <option key={index}>{element}</option>
-                ))}
-              </select>
-              <Link
-                className="btn text-uppercase font-12 py-1 px-2 rounded"
-                href="javascript:void(0);"
-              >
-                Download
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <div className="m-auto">
+    <>
+      <Card>
+        <Card.Body>
+          <Row className="align-items-center mb-3">
+            <Col><h6 className="m-0">Bar Chart</h6></Col>
+            <Col>
+              <Row>
+                <Col>
+                  <Form.Select size="sm" className="py-2">
+                    {sOptions.map((element, index) => (
+                      <option key={index}>{element}</option>
+                    ))}
+                  </Form.Select>
+                </Col>
+                <Col>
+                  <Button variant="outline-secondary" size="sm" className="py-2">Download</Button>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
               <Bar options={options} data={data} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </>
   );
 }

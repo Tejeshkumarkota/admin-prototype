@@ -1,73 +1,77 @@
 import React, { useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
-import { Link } from "react-router-dom";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 
 export function PieChart() {
   ChartJS.register(ArcElement, Tooltip, Legend);
 
   const data = {
-    labels: ["Red", "Blue", "Yellow", "Green", //"Purple", "Orange"
-],
+    labels: ["Dubai", "Asia", "Europe",],
     datasets: [
       {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, //2, 3
-        ],
+        data: [12, 19, 3,],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          //"rgba(153, 102, 255, 0.2)",
-          //"rgba(255, 159, 64, 0.2)",
+          "#5c72fe",
+          "#ff0058",
+          "#00d4d4"
         ],
         borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-         // "rgba(153, 102, 255, 1)",
-          //"rgba(255, 159, 64, 1)",
+          "#fff",
+          "#fff",
+          "#fff"
         ],
-        borderWidth: 1,
+        borderWidth: 3,
       },
     ],
   };
+  const options = {
+    legend: {
+      "position": "bottom",
+      display: false,
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    offset: true,
+  };
 
-  const [sOptions, setSOptions] = useState(["2001", "2002", "2003", "2004", "2005"]);
+  const [sOptions, setSOptions] = useState(["Select", "2001", "2002", "2003", "2004", "2005"]);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <div className="row mb-3 ">
-          <div className="col-6 text-start">
-            <h5 className="">Pie Chart</h5>
-          </div>
-          <div className="col-6">
-            <div className="d-flex justify-content-end">
-              <select className="form-select me-2 chart-select">
-                {sOptions.map((element, index) => (
-                  <option key={index}>{element}</option>
-                ))}
-              </select>
-              <Link
-                className="btn text-uppercase font-12 py-1 px-2 rounded"
-                href="javascript:void(0);"
-              >
-                Download
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <div className="w-50 m-auto">
-              <Pie data={data} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Card>
+        <Card.Body>
+          <Row className="align-items-center mb-3">
+            <Col><h6 className="m-0">Pie Chart</h6></Col>
+            <Col>
+              <Row>
+                <Col>
+                  <Form.Select size="sm" className="py-2">
+                    {sOptions.map((element, index) => (
+                      <option key={index}>{element}</option>
+                    ))}
+                  </Form.Select>
+                </Col>
+                <Col>
+                  <Button variant="outline-secondary" size="sm" className="py-2">Download</Button>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <Pie data={data} options={options} height={300} />
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </>
   );
 }
