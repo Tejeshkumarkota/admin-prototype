@@ -28,11 +28,7 @@ const PublicRoutes = () => {
                 <Routes>
                     <Route exact path="/auth/login" element={<SignIn />}></Route>
                     <Route exact path="/auth/register" element={<SignUp />}></Route>
-                    <Route
-                        exact
-                        path="/auth/forgot-password"
-                        element={<ForgotPassword />}
-                    ></Route>
+                    <Route exact path="/auth/forgot-password" element={<ForgotPassword />}></Route>
                 </Routes>
             ) : (
                 <div className="Wrapper">
@@ -42,52 +38,16 @@ const PublicRoutes = () => {
                             <Header />
                             <Container fluid>
                                 <Routes>
-                                    <Route
-                                        exact
-                                        path="/components/modal"
-                                        element={<ModalPopup />}
-                                    ></Route>
-                                    <Route
-                                        exact
-                                        path="/components/accordion"
-                                        element={<AccordionBootstrap />}
-                                    ></Route>
-                                    <Route
-                                        exact
-                                        path="/components/alert"
-                                        element={<AlertBootstrap />}
-                                    ></Route>
-                                    <Route
-                                        exact
-                                        path="/components/card"
-                                        element={<CardBootstrap />}
-                                    ></Route>
-                                    <Route
-                                        exact
-                                        path="/components/carousel"
-                                        element={<CarouselBootstrap />}
-                                    ></Route>
+                                    <Route exact path="/components/modal" element={<ModalPopup />}></Route>
+                                    <Route exact path="/components/accordion" ent={<AccordionBootstrap />}></Route>
+                                    <Route exact path="/components/alert" element={<AlertBootstrap />}></Route>
+                                    <Route exact path="/components/card" element={<CardBootstrap />}></Route>
+                                    <Route exact path="/components/carousel" ment={<CarouselBootstrap />}></Route>
                                     <Route exact path="/dashboard" element={<Home />}></Route>
-                                    <Route
-                                        exact
-                                        path="/charts"
-                                        element={<ChartJsWrapper />}
-                                    ></Route>
-                                    <Route
-                                        exact
-                                        path="/gantt-chart"
-                                        element={<GanttChartWrapper />}
-                                    ></Route>
-                                    <Route
-                                        exact
-                                        path="/dx-schedular"
-                                        element={<DxSchedular />}
-                                    ></Route>
-                                    <Route
-                                        exact
-                                        path="/floor-plan-admin"
-                                        element={<FloorPlanAdmin />}
-                                    ></Route>
+                                    <Route exact path="/charts" element={<ChartJsWrapper />}></Route>
+                                    <Route exact path="/gantt-chart" element={<GanttChartWrapper />}></Route>
+                                    <Route exact path="/dx-schedular" element={<DxSchedular />}></Route>
+                                    <Route exact path="/floor-plan-admin" element={<FloorPlanAdmin />}></Route>
                                 </Routes>
                             </Container>
                         </div>
