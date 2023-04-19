@@ -3,6 +3,7 @@ import {
 	Route,
     useLocation
 } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 //  imported pages here
 import Home from '../../pages/Home/Home';
 import SignIn from '../../pages/Auth/SignIn/SignIn';
@@ -36,7 +37,7 @@ const PublicRoutes = () => {
                 <div className="ContentWrapper">
                     <div className="Content">
                         <Header/>
-                        <div className='container-fluid'>
+                        <Container fluid>
                             <Routes>
                                 <Route exact path='/components/modal' element={<ModalPopup />}></Route>
                                 <Route exact path='/components/accordion' element={<AccordionBootstrap />}></Route>
@@ -46,7 +47,7 @@ const PublicRoutes = () => {
                                 <Route exact path='/gantt-chart' element={<GanttChartWrapper />}></Route> 
                                 <Route exact path='/dx-schedular' element={<DxSchedular />}></Route>
                             </Routes>
-                        </div>
+                        </Container>
                     </div>
                 </div>
             </div>

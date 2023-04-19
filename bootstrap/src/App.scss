@@ -16,7 +16,8 @@
 body {
   background-color: #fff;
   color: #222;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--bs-body-font-family);
+  font-size: 14px;
 }
 * {
 	margin: 0;
@@ -121,7 +122,7 @@ body {
 					padding: 3px;
 					transform: rotate(-45deg);
 					-webkit-transform: rotate(-45deg);
-					right: 0;
+					right: 10px;
 				}
 			}
 		}

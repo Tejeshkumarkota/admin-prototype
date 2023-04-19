@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Nav, Collapse } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Scheduler } from '@aldabil/react-scheduler';
 
 const NavMenu = () => {
   const [open, setOpen] = useState(false);
