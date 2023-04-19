@@ -7,17 +7,15 @@ import {
 const CustomModal = () => {
 
     const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShowClose = () => setShow(!show);
 
     return ( 
         <>
-            <Button onClick={handleShow} variant="primary" type="button" className="text-uppercase font-12 py-2 px-4 d-inline-block rounded">
+            <Button onClick={handleShowClose} variant="primary" type="button" className="text-uppercase font-12 py-2 px-4 d-inline-block rounded">
                 Bootstrap Modal
             </Button>
 
-            <Modal size="lg" show={show} className='custom-modal' onHide={handleClose}>
+            <Modal size="lg" show={show} className='custom-modal' onHide={handleShowClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Bootstrap Modal</Modal.Title>
                 </Modal.Header>
@@ -30,10 +28,10 @@ const CustomModal = () => {
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="outline-primary" className='text-uppercase font-12 d-inline-block py-2 px-4 rounded' onClick={handleClose}>
+                    <Button variant="outline-primary" className='text-uppercase font-12 d-inline-block py-2 px-4 rounded' onClick={handleShowClose}>
                         Cancel
                     </Button>
-                    <Button variant="primary" className='text-uppercase font-12 py-2 px-4 d-inline-block rounded ms-2' onClick={handleClose}>
+                    <Button variant="primary" className='text-uppercase font-12 py-2 px-4 d-inline-block rounded ms-2' onClick={handleShowClose}>
                         Save
                     </Button>
                 </Modal.Footer>

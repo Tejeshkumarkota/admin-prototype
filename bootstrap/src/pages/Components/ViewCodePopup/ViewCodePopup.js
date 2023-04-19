@@ -33,8 +33,13 @@ const ViewCodePopup = ({ show, setShow, NavData, children }) => {
               );
             })}
           </Nav>
-
-          <div className="view-code-bg-theme p-3 mt-4">
+          <div className="my-3 view-code-bg-theme p-3">
+            <h6 className="">
+              How to Import
+            </h6>
+            {NavData[dispayContent].imports}
+          </div>
+          <div className="view-code-bg-theme p-3">
             {NavData[dispayContent].show_content}
           </div>
           </>
