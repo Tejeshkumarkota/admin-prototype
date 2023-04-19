@@ -46,7 +46,7 @@ const NavMenu = () => {
             aria-expanded={open}>Floor Plan</Link>
           <Collapse in={open}>
             <div id="example-collapse-text2">
-              <Link to={"/floor-plan-admin"}>Floor Plan Admin</Link>
+              <Link to={"/floor-custom-code"}>Floor Custom Code</Link>
             </div>
           </Collapse>
         </Nav.Item>
