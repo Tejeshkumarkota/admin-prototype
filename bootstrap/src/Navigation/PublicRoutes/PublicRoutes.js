@@ -16,6 +16,7 @@ import CarouselBootstrap from "../../pages/Components/Carousel/CarouselBootstrap
 import { FloorPlanAdmin } from "../../pages/Floor/DXDiagram/FloorPlanAdmin";
 import Header from "../../pages/Layout/Header/Header";
 import Sidebar from "../../pages/Layout/Sidebar/Sidebar";
+import {CustomCode} from "../../pages/Floor/CustomCode/CustomCode";
 
 const PublicRoutes = () => {
     let location = useLocation();
@@ -48,6 +49,7 @@ const PublicRoutes = () => {
                                     <Route exact path="/gantt-chart" element={<GanttChartWrapper />}></Route>
                                     <Route exact path="/dx-schedular" element={<DxSchedular />}></Route>
                                     <Route exact path="/floor-plan-admin" element={<FloorPlanAdmin />}></Route>
+                                    <Route exact path="/floor-custom-code" element={<CustomCode />}></Route>
                                 </Routes>
                             </Container>
                         </div>
