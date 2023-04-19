@@ -1,8 +1,8 @@
+import Header from "../Header/Header";
+
 const ContentWrapper = () => {
     return ( 
-        <div className="ContentWrapper">
-            <div className="Content"></div>
-        </div>
+        
      );
 }
  
