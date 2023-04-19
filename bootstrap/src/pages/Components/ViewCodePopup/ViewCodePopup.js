@@ -19,7 +19,7 @@ const ViewCodePopup = ({ show, setShow, NavData, children }) => {
         <Modal.Body>
 
          {NavData && <>
-         <Nav justify variant="tabs" defaultActiveKey={NavData[0].link}>
+          <Nav justify variant="tabs" className="popup-nav-code" defaultActiveKey={NavData[0].link}>
             {NavData.map((data, index) => {
               return (
                 <Nav.Item>
@@ -34,7 +34,7 @@ const ViewCodePopup = ({ show, setShow, NavData, children }) => {
             })}
           </Nav>
 
-          <div className="view-code-bg-theme p-3">
+          <div className="view-code-bg-theme p-3 mt-4">
             {NavData[dispayContent].show_content}
           </div>
           </>

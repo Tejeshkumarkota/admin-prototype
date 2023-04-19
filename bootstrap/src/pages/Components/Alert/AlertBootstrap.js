@@ -5,7 +5,9 @@ import ViewCodeButton from "../ViewCodeButton/ViewCodeButton";
 import ViewCodePopup from "../ViewCodePopup/ViewCodePopup";
 
 const AlertBootstrap = () => {
+
   const [show, setShow] = useState(false);
+  
   const NavData=[
     {
       title:'Alert Primary',
@@ -40,7 +42,6 @@ const AlertBootstrap = () => {
     </Alert>`
     },
   ];
-
 
   return (
     <>
