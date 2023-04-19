@@ -22,6 +22,7 @@ const ChartJsWrapper = () => {
           </Button>
         </Col>
       </Row>
+      
       <Row>
         <Col sm={6} xs={12} className="mb-4"><PieChart /></Col>
         <Col sm={6} xs={12} className="mb-4"><DoughnutChart /></Col>
