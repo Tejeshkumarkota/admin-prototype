@@ -2,7 +2,6 @@ import React, { useState, useRef, useCallback } from 'react';
 import ReactFlow, { ReactFlowProvider, addEdge, useNodesState, useEdgesState, Controls, } from 'reactflow';
 import 'reactflow/dist/style.css';
 import Sidebar from './Components/Sidebar';
-import './Components/Sidebar.css';
 import { Row, Col } from 'react-bootstrap';
 
 const initialNodes = [

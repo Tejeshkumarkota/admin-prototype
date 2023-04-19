@@ -311,3 +311,195 @@ a {
   }
 }
 // Nav Styles End
+
+// Custom Code Start //
+.dndflow {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  aside {
+    border-right: 1px solid #eee;
+    padding: 15px 10px;
+    font-size: 12px;
+    background: #fcfcfc;
+    .description {
+      margin-bottom: 10px;
+    }
+  }
+  .dndnode {
+    height: 30px;
+    padding: 4px;
+    border: 1px solid #1a192b;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    &.input {
+      border-color: #0041d0;
+    }
+    &.output {
+      border-color: #ff0072;
+    }
+  } 
+  .reactflow-wrapper {
+    flex-grow: 1;
+    height: 100%;
+  }
+  .selectall {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    .dndflow {
+      flex-direction: row;
+    }
+  
+    .dndflow aside {
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+}
+// Custom Code End //
+
+//Grunt Start //
+.ViewContainer {
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  .Button {
+    background-color: #e7e7e7;
+    color: black;
+    border: none;
+    padding: 5px 16px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+  }
+  .Switch {
+    margin: 4px 15px;
+    font-size: 14px;
+    font-family: "Arial, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .Switch_Toggle {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      margin-right: 5px;
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}
+.Slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 21px;
+    left: 6px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+input:checked + .Slider {
+  background-color: #2196f3;
+}
+input:focus + .Slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .Slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+//Grunt End //
+
+//Floor Plan Admin Start //
+.react-flow{
+  height: 600px !important;
+  .react-flow__node-custom {
+    font-size: 10px;
+    width: 180px;
+    background: #f5f5f6;
+    color: #222;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 15%), 0 2px 4px -1px rgb(0 0 0 / 8%);
+    border-radius: 2px;
+    &.react-flow__handle {
+      top: 24px;
+      right: -15px;
+      width: 6px;
+      height: 10px;
+      border-radius: 2px;
+      background-color: #778899;
+    }
+  }
+  .react-flow__node{
+    &.circle {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+    }
+    &.annotation {
+      border-radius: 0;
+      text-align: left;
+      background: white;
+      border: none;
+      line-height: 1.4;
+      width: 225px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 15%), 0 2px 4px -1px rgb(0 0 0 / 8%);
+      &.react-flow__handle {
+        display: none;
+      }
+    }
+  }
+
+  .custom-node__header {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .custom-node__body {
+    padding: 10px;
+  }
+
+  .custom-node__select {
+    position: relative;
+    margin-bottom: 10px;
+    select {
+      width: 100%;
+      margin-top: 5px;
+      font-size: 10px;
+    }
+  }  
+}
+
+//Floor Plan Admin End //

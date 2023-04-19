@@ -4,7 +4,6 @@ import { Gantt, Task, ViewMode } from "gantt-task-react";
 import "gantt-task-react/dist/index.css";
 import { ViewSwitcher } from "./components/view-switcher";
 import { getStartEndDateForProject, initTasks } from "./components/Helper.jsx";
-import './components/grunt.css'
 
 const GanttChartWrapper = () => {
   const [view, setView] = useState(ViewMode.Day);
