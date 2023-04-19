@@ -7,12 +7,13 @@ import ViewCodePopup from "../ViewCodePopup/ViewCodePopup";
 const AlertBootstrap = () => {
 
   const [show, setShow] = useState(false);
-  
+
   const NavData=[
     {
       title:'Alert Primary',
-      link:'/alert-primary',
-      show_content:`<Alert
+      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
+      show_content:`const [show, setShow] = useState(false);
+      <Alert
       variant="primary"
       onClose={() => setShow(false)}
       dismissible
@@ -26,21 +27,124 @@ const AlertBootstrap = () => {
     </Alert>`
     },
     {
-      title:'Alert Danger',
-      link:'/alert-danger',
-      show_content:`<Alert
-      variant="danger"
-      onClose={() => setShow(false)}
-      dismissible
-    >
-      <p className="mb-0 font-14">
-        Change this and that and try again. Duis mollis, est non
-        commodo luctus, nisi erat porttitor ligula, eget lacinia
-        odio sem nec elit. Cras mattis consectetur purus sit amet
-        fermentum.
-      </p>
-    </Alert>`
+      title:'Alert Secondary',
+      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
+      show_content:`const [show, setShow] = useState(false);
+      <Alert
+        variant="secondary"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
     },
+    {
+      title:'Alert Success',
+      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
+      show_content:`const [show, setShow] = useState(false);
+      <Alert
+        variant="success"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
+    },
+    {
+      title:'Alert Danger',
+      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
+      show_content:`const [show, setShow] = useState(false);
+      <Alert
+        variant="danger"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
+    },
+    {
+      title:'Alert Warning',
+      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
+      show_content:`const [show, setShow] = useState(false);
+      <Alert
+        variant="warning"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
+    },
+    {
+      title:'Alert Info',
+      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
+      show_content:`const [show, setShow] = useState(false);
+      <Alert
+        variant="info"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
+    },
+    {
+      title:'Alert Light',
+      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
+      show_content:`const [show, setShow] = useState(false);
+      <Alert
+        variant="light"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
+    },
+    {
+      title:'Alert Dark',
+      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
+      show_content:`const [show, setShow] = useState(false);
+      <Alert
+        variant="dark"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
+    }
   ];
 
   return (
