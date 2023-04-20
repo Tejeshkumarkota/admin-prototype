@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Modal, Nav } from "react-bootstrap";
+import CodeSyntaxHighlighter from "../CodeSyntaxHighlighter/CodeSyntaxHighlighter";
 
 const ViewCodePopup = ({ show, setShow, NavData, children }) => {
   // const handleShowClose = () => setShow(!show);
@@ -19,7 +20,7 @@ const ViewCodePopup = ({ show, setShow, NavData, children }) => {
         <Modal.Body>
 
          {NavData && <>
-          <Nav justify variant="tabs" className="popup-nav-code" defaultActiveKey={NavData[0].link}>
+          <Nav justify variant="tabs" className="popup-nav-code mb-3" defaultActiveKey={NavData[0].link}>
             {NavData.map((data, index) => {
               return (
                 <Nav.Item>
@@ -33,15 +34,15 @@ const ViewCodePopup = ({ show, setShow, NavData, children }) => {
               );
             })}
           </Nav>
-          <div className="my-3 view-code-bg-theme p-3">
+          {/* <div className="my-3 view-code-bg-theme p-3"> */}
             <h6 className="">
               How to Import
             </h6>
-            {NavData[dispayContent].imports}
-          </div>
-          <div className="view-code-bg-theme p-3">
-            {NavData[dispayContent].show_content}
-          </div>
+            <CodeSyntaxHighlighter code={NavData[dispayContent].imports} />
+          {/* </div> */}
+          {/* <div className="view-code-bg-theme p-3"> */}
+            <CodeSyntaxHighlighter code={NavData[dispayContent].show_content} />
+          {/* </div> */}
           </>
           }
         </Modal.Body>

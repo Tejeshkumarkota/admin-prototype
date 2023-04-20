@@ -11,25 +11,33 @@ const AlertBootstrap = () => {
   const NavData=[
     {
       title:'Alert Primary',
-      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
-      show_content:`const [show, setShow] = useState(false);
+      imports: `
+      import Alert from "react-bootstrap/Alert" 
+      import { useState } from "react";`,
+      show_content:`
+      const [show, setShow] = useState(false);
+
       <Alert
-      variant="primary"
-      onClose={() => setShow(false)}
-      dismissible
-    >
-      <p className="mb-0 font-14">
-        Change this and that and try again. Duis mollis, est non
-        commodo luctus, nisi erat porttitor ligula, eget lacinia
-        odio sem nec elit. Cras mattis consectetur purus sit amet
-        fermentum.
-      </p>
-    </Alert>`
+        variant="primary"
+        onClose={() => setShow(false)}
+        dismissible
+      >
+        <p className="mb-0 font-14">
+          Change this and that and try again. Duis mollis, est non
+          commodo luctus, nisi erat porttitor ligula, eget lacinia
+          odio sem nec elit. Cras mattis consectetur purus sit amet
+          fermentum.
+        </p>
+      </Alert>`
     },
     {
       title:'Alert Secondary',
-      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
-      show_content:`const [show, setShow] = useState(false);
+      imports: `
+      import Alert from "react-bootstrap/Alert" 
+      import { useState } from "react";`,
+      show_content:`
+      const [show, setShow] = useState(false);
+      
       <Alert
         variant="secondary"
         onClose={() => setShow(false)}
@@ -45,8 +53,12 @@ const AlertBootstrap = () => {
     },
     {
       title:'Alert Success',
-      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
-      show_content:`const [show, setShow] = useState(false);
+      imports: `
+      import Alert from "react-bootstrap/Alert" 
+      import { useState } from "react";`,
+      show_content:`
+      const [show, setShow] = useState(false);
+      
       <Alert
         variant="success"
         onClose={() => setShow(false)}
@@ -62,8 +74,12 @@ const AlertBootstrap = () => {
     },
     {
       title:'Alert Danger',
-      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
-      show_content:`const [show, setShow] = useState(false);
+      imports: `
+      import Alert from "react-bootstrap/Alert" 
+      import { useState } from "react";`,
+      show_content:`
+      const [show, setShow] = useState(false);
+      
       <Alert
         variant="danger"
         onClose={() => setShow(false)}
@@ -79,8 +95,12 @@ const AlertBootstrap = () => {
     },
     {
       title:'Alert Warning',
-      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
-      show_content:`const [show, setShow] = useState(false);
+      imports: `
+      import Alert from "react-bootstrap/Alert" 
+      import { useState } from "react";`,
+      show_content:`
+      const [show, setShow] = useState(false);
+      
       <Alert
         variant="warning"
         onClose={() => setShow(false)}
@@ -96,8 +116,12 @@ const AlertBootstrap = () => {
     },
     {
       title:'Alert Info',
-      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
-      show_content:`const [show, setShow] = useState(false);
+      imports: `
+      import Alert from "react-bootstrap/Alert" 
+      import { useState } from "react";`,
+      show_content:`
+      const [show, setShow] = useState(false);
+      
       <Alert
         variant="info"
         onClose={() => setShow(false)}
@@ -113,8 +137,12 @@ const AlertBootstrap = () => {
     },
     {
       title:'Alert Light',
-      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
-      show_content:`const [show, setShow] = useState(false);
+      imports: `
+      import Alert from "react-bootstrap/Alert" 
+      import { useState } from "react";`,
+      show_content:`
+      const [show, setShow] = useState(false);
+      
       <Alert
         variant="light"
         onClose={() => setShow(false)}
@@ -130,8 +158,12 @@ const AlertBootstrap = () => {
     },
     {
       title:'Alert Dark',
-      imports: 'import Alert from "react-bootstrap/Alert" import { useState } from "react";',
-      show_content:`const [show, setShow] = useState(false);
+      imports: `
+      import Alert from "react-bootstrap/Alert" 
+      import { useState } from "react";`,
+      show_content:`
+      const [show, setShow] = useState(false);
+      
       <Alert
         variant="dark"
         onClose={() => setShow(false)}
