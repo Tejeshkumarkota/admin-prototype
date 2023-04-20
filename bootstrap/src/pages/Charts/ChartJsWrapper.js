@@ -4,22 +4,20 @@ import { PieChart } from "./PieChart/PieChart";
 import { BarChart } from "./BarChart/BarChart";
 import { MixedBarChart } from "./MixedBarChart/MixedBarChart";
 import { StackedBarChart } from './StackedBarChart/StackedBarChart';
-import { Row, Col, Button, Modal } from 'react-bootstrap';
-import { BsCodeSlash } from "react-icons/bs";
+import { Row, Col } from 'react-bootstrap';
+import ViewCodePopup from "../Components/ViewCodePopup/ViewCodePopup";
+import ViewCodeButton from "../Components/ViewCodeButton/ViewCodeButton";
+import {ChartData} from '../ViewCodeData/ViewCodeData';
 
 const ChartJsWrapper = () => {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <>
       <Row className="mb-4">
         <Col><h4 className="fw-boldest text-black mb-0">Charts</h4></Col>
         <Col className="text-end">
-          <Button onClick={handleShow} variant="outline-primary" type="button" className="py-1 px-2 btn-sm">
-            <BsCodeSlash />
-          </Button>
+          <ViewCodeButton show={show} setShow={setShow} />
         </Col>
       </Row>
       
@@ -31,14 +29,7 @@ const ChartJsWrapper = () => {
         <Col sm={6} xs={12} className="mb-4"><StackedBarChart /></Col>
         <Col sm={6} xs={12} className="mb-4"></Col>
       </Row>
-      <Modal size="xl" show={show} className='custom-modal' onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>View Code</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-
-        </Modal.Body>
-      </Modal>
+      <ViewCodePopup show={show} setShow={setShow} NavData={ChartData} />
     </>
   );
 };
