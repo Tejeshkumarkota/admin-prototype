@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Nav, Collapse } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Nav, Collapse } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NavMenu = () => {
   const [open, setOpen] = useState(false);
@@ -12,12 +12,20 @@ const NavMenu = () => {
         className="flex-column"
       >
         <Nav.Item>
-          <Link to={"/"} activeClassName="active">Dashboard</Link>
+          <Link to={"/"} activeClassName="active">
+            Dashboard
+          </Link>
         </Nav.Item>
         <Nav.Item>
-          <Link to={" "} className='nav-drop' onClick={() => setOpen(!open)}
+          <Link
+            to={" "}
+            className="nav-drop"
+            onClick={() => setOpen(!open)}
             aria-controls="example-collapse-text"
-            aria-expanded={open}>Components</Link>
+            aria-expanded={open}
+          >
+            Components
+          </Link>
           <Collapse in={open}>
             <div id="example-collapse-text">
               <Link to={"/components/modal"}>Modal</Link>
@@ -27,9 +35,15 @@ const NavMenu = () => {
           </Collapse>
         </Nav.Item>
         <Nav.Item>
-          <Link to={" "} className='nav-drop' onClick={() => setOpen(!open)}
+          <Link
+            to={" "}
+            className="nav-drop"
+            onClick={() => setOpen(!open)}
             aria-controls="example-collapse-text1"
-            aria-expanded={open}>Charts</Link>
+            aria-expanded={open}
+          >
+            Charts
+          </Link>
           <Collapse in={open}>
             <div id="example-collapse-text1">
               <Link to={"/charts"}>Chart Js</Link>
@@ -41,9 +55,15 @@ const NavMenu = () => {
           </Collapse>
         </Nav.Item>
         <Nav.Item>
-          <Link to={" "} className='nav-drop' onClick={() => setOpen(!open)}
+          <Link
+            to={" "}
+            className="nav-drop"
+            onClick={() => setOpen(!open)}
             aria-controls="example-collapse-text2"
-            aria-expanded={open}>Floor Plan</Link>
+            aria-expanded={open}
+          >
+            Floor Plan
+          </Link>
           <Collapse in={open}>
             <div id="example-collapse-text2">
               <Link to={"/floor-plan-admin"}>Floor Plan Admin</Link>
@@ -53,6 +73,6 @@ const NavMenu = () => {
       </Nav>
     </>
   );
-}
+};
 
 export default NavMenu;
