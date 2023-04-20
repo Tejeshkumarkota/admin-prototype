@@ -2,7 +2,10 @@ import React, { useState, useRef, useCallback } from 'react';
 import ReactFlow, { ReactFlowProvider, addEdge, useNodesState, useEdgesState, Controls, } from 'reactflow';
 import 'reactflow/dist/style.css';
 import Sidebar from './Components/Sidebar';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Card } from 'react-bootstrap';
+import ViewCodePopup from "../../Components/ViewCodePopup/ViewCodePopup";
+import ViewCodeButton from "../../Components/ViewCodeButton/ViewCodeButton";
+import { FloorPlanCustomCodeData } from '../../ViewCodeData/ViewCodeData';
 
 const initialNodes = [
     {
@@ -57,33 +60,48 @@ const CustomCode = () => {
         [reactFlowInstance]
     );
 
+    const [show, setShow] = useState(false);
+
     return (
-        <Row className="dndflow">
-            <Col>
-                <ReactFlowProvider className="w-100">
-                    <Row>
-                        <Col sm={4}><Sidebar /></Col>
-                        <Col sm={8}>
-                            <div className="reactflow-wrapper" ref={reactFlowWrapper}>
-                                <ReactFlow
-                                    nodes={nodes}
-                                    edges={edges}
-                                    onNodesChange={onNodesChange}
-                                    onEdgesChange={onEdgesChange}
-                                    onConnect={onConnect}
-                                    onInit={setReactFlowInstance}
-                                    onDrop={onDrop}
-                                    onDragOver={onDragOver}
-                                    fitView
-                                >
-                                    <Controls />
-                                </ReactFlow>
-                            </div>
+        <>
+            <Row className="mb-4">
+                <Col><h4 className="fw-boldest text-black mb-0">Floor Plan Custom Code</h4></Col>
+                <Col className="text-end">
+                    <ViewCodeButton show={show} setShow={setShow} />
+                </Col>
+            </Row>
+            <Card>
+                <Card.Body>
+                    <Row className="dndflow">
+                        <Col>
+                            <ReactFlowProvider className="w-100">
+                                <Row>
+                                    <Col sm={4}><Sidebar /></Col>
+                                    <Col sm={8}>
+                                        <div className="reactflow-wrapper" ref={reactFlowWrapper}>
+                                            <ReactFlow
+                                                nodes={nodes}
+                                                edges={edges}
+                                                onNodesChange={onNodesChange}
+                                                onEdgesChange={onEdgesChange}
+                                                onConnect={onConnect}
+                                                onInit={setReactFlowInstance}
+                                                onDrop={onDrop}
+                                                onDragOver={onDragOver}
+                                                fitView
+                                            >
+                                                <Controls />
+                                            </ReactFlow>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </ReactFlowProvider>
                         </Col>
                     </Row>
-                </ReactFlowProvider>
-            </Col>
-        </Row>
+                </Card.Body>
+            </Card>
+            <ViewCodePopup show={show} setShow={setShow} NavData={FloorPlanCustomCodeData} />
+        </>
     );
 };
 
