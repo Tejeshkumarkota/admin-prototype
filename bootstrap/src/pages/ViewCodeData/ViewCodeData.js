@@ -178,93 +178,162 @@ export const ChartData = [
 
           <Bar options={options} data={data} />
         `,
-      },
+    },
 
-      {
-        title: "Mixed bar chart",
-        imports: `
-            import React, { useState } from "react";
-            import {
-            Chart as ChartJS,
-            CategoryScale,
-            LinearScale,
-            PointElement,
-            LineElement,
-            Title,
-            Tooltip,
-            Legend,
-            } from "chart.js";
-            import { Line } from "react-chartjs-2";
-        `,
-        show_content: `
+    {
+    title: "Mixed bar chart",
+    imports: `
+        import React, { useState } from "react";
+        import {
+        Chart as ChartJS,
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        Title,
+        Tooltip,
+        Legend,
+        } from "chart.js";
+        import { Line } from "react-chartjs-2";
+    `,
+    show_content: `
+    ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        Title,
+        Tooltip,
+        Legend
+        );
+    
+        const options = {
+        responsive: true,
+        interaction: {
+            mode: "index",
+            intersect: false,
+        },
+        stacked: false,
+        plugins: {
+            title: {
+            display: true,
+            //text: "Chart.js Line Chart - Multi Axis",
+            },
+        },
+        scales: {
+            y: {
+            type: "linear",
+            display: true,
+            position: "left",
+            },
+            y1: {
+            type: "linear",
+            display: true,
+            position: "right",
+            grid: {
+                drawOnChartArea: false,
+            },
+            },
+        },
+        };
+
+    const labels = ["January", "February", "March", "April", "May", "June", "July",];
+
+    const data = {
+        labels,
+        datasets: [
+        {
+            label: "Dataset 1",
+            data: [140, 100, 160, 100, 140, 100,],
+            borderColor: "#ff0058",
+            backgroundColor: "#ff0058",
+            yAxisID: "y",
+        },
+        {
+            label: "Dataset 2",
+            data: [160, 200, 140, 100, 160, 200,],
+            borderColor: "#00d4d4",
+            backgroundColor: "#00d4d4",
+            yAxisID: "y1",
+        },
+        ],
+    };
+
+    <Line options={options} data={data} />
+    `,
+    },
+
+    {
+    title: "Stacked Bar Chart",
+    imports: `
+    import React, { useState } from "react";
+    import {
+        Chart as ChartJS,
+        CategoryScale,
+        LinearScale,
+        BarElement,
+        Title,
+        Tooltip,
+        Legend,
+        } from 'chart.js';
+        import { Bar } from 'react-chartjs-2';
+    `,
+    show_content: `
         ChartJS.register(
             CategoryScale,
             LinearScale,
-            PointElement,
-            LineElement,
+            BarElement,
             Title,
             Tooltip,
             Legend
-          );
+        );
         
-          const options = {
-            responsive: true,
-            interaction: {
-              mode: "index",
-              intersect: false,
-            },
-            stacked: false,
+        const options = {
             plugins: {
-              title: {
+            title: {
                 display: true,
-                //text: "Chart.js Line Chart - Multi Axis",
-              },
+                ///text: 'Chart.js Bar Chart - Stacked',
             },
+            },
+            responsive: true,
             scales: {
-              y: {
-                type: "linear",
-                display: true,
-                position: "left",
-              },
-              y1: {
-                type: "linear",
-                display: true,
-                position: "right",
-                grid: {
-                  drawOnChartArea: false,
-                },
-              },
+            x: {
+                stacked: true,
             },
-          };
-
-        const labels = ["January", "February", "March", "April", "May", "June", "July",];
-
+            y: {
+                stacked: true,
+            },
+            },
+        };
+        
+        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+        
         const data = {
             labels,
             datasets: [
             {
-                label: "Dataset 1",
-                data: [140, 100, 160, 100, 140, 100,],
-                borderColor: "#ff0058",
-                backgroundColor: "#ff0058",
-                yAxisID: "y",
+                label: 'Dataset 1',
+                data: [100, 80, 100, 80, 100, 80],
+                backgroundColor: '#00d4d4',
             },
             {
-                label: "Dataset 2",
-                data: [160, 200, 140, 100, 160, 200,],
-                borderColor: "#00d4d4",
-                backgroundColor: "#00d4d4",
-                yAxisID: "y1",
+                label: 'Dataset 2',
+                data: [40, 60, 40, 60, 40, 60],
+                backgroundColor: '#ff0058',
+            },
+            {
+                label: 'Dataset 3',
+                data: [100, 20, 100, 30, 100, 40],
+                backgroundColor: '#5c72fe',
             },
             ],
         };
 
-        <Line options={options} data={data} />
-        `,
-      },
-
-      {
-        title: "Stacked Bar Chart",
+        <Bar options={options} data={data} />        
+    `,
+    },
+    {
+        title: "Grouped Bar Chart",
         imports: `
         import React, { useState } from "react";
         import {
@@ -279,59 +348,66 @@ export const ChartData = [
           import { Bar } from 'react-chartjs-2';
         `,
         show_content: `
-            ChartJS.register(
-                CategoryScale,
-                LinearScale,
-                BarElement,
-                Title,
-                Tooltip,
-                Legend
-            );
-            
-            const options = {
-                plugins: {
-                title: {
-                    display: true,
-                    ///text: 'Chart.js Bar Chart - Stacked',
-                },
-                },
-                responsive: true,
-                scales: {
-                x: {
-                    stacked: true,
-                },
-                y: {
-                    stacked: true,
-                },
-                },
-            };
-            
-            const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-            
-            const data = {
-                labels,
-                datasets: [
-                {
-                    label: 'Dataset 1',
-                    data: [100, 80, 100, 80, 100, 80],
-                    backgroundColor: '#00d4d4',
-                },
-                {
-                    label: 'Dataset 2',
-                    data: [40, 60, 40, 60, 40, 60],
-                    backgroundColor: '#ff0058',
-                },
-                {
-                    label: 'Dataset 3',
-                    data: [100, 20, 100, 30, 100, 40],
-                    backgroundColor: '#5c72fe',
-                },
-                ],
-            };
+        ChartJS.register(
+            CategoryScale,
+            LinearScale,
+            BarElement,
+            Title,
+            Tooltip,
+            Legend
+        );
+    
+        const options = {
+            plugins: {
+              title: {
+                display: true,
+                text: 'Chart.js Bar Chart - Stacked',
+              },
+            },
+            responsive: true,
+            interaction: {
+              mode: 'index',
+              intersect: false,
+            },
+            scales: {
+              x: {
+                stacked: true,
+              },
+              y: {
+                stacked: true,
+              },
+            },
+        };
+    
+        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    
+        const data = {
+            labels,
+            datasets: [
+              {
+                label: 'Dataset 1',
+                data: [40, 60, 40, 60, 40, 60],
+                backgroundColor: 'rgb(255, 99, 132)',
+                stack: 'Stack 0',
+              },
+              {
+                label: 'Dataset 2',
+                data: [100, 80, 100, 80, 100, 80],
+                backgroundColor: 'rgb(75, 192, 192)',
+                stack: 'Stack 0',
+              },
+              {
+                label: 'Dataset 3',
+                data: [100, 60, 70, 30, 800, 10],
+                backgroundColor: 'rgb(53, 162, 235)',
+                stack: 'Stack 1',
+              },
+            ],
+          };
 
-            <Bar options={options} data={data} />        
+          <Bar options={options} data={data} />
         `,
-      },
+    },
   ];
 
   export const GanttChartData = [
