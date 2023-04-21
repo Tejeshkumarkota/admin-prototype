@@ -1,7 +1,6 @@
 import DashboardTiles from './components/DashboardTiles/DahboardTiles';
 import { Row, Col } from 'react-bootstrap';
 import TableContent from './components/Table/Table';
-import NavMenu from './components/navMenu/navMenu';
 
 const DashboardWrapper = () => {
    
@@ -13,7 +12,6 @@ const DashboardWrapper = () => {
                     <DashboardTiles />
                     <h1 className="font-22 mb-4">Default Table Example</h1>
                     <TableContent />
-                    <NavMenu />
                 </Col>
             </Row>
         </>

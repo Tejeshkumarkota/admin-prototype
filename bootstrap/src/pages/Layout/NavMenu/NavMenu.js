@@ -12,7 +12,7 @@ const NavMenu = () => {
         className="flex-column"
       >
         <Nav.Item>
-          <Link to={"/"} activeClassName="active">
+          <Link to={"/dashboard"} activeClassName="active">
             Dashboard
           </Link>
         </Nav.Item>
