@@ -17,6 +17,7 @@ import { FloorPlanAdmin } from "../../pages/Floor/DXDiagram/FloorPlanAdmin";
 import Header from "../../pages/Layout/Header/Header";
 import Sidebar from "../../pages/Layout/Sidebar/Sidebar";
 import {CustomCode} from "../../pages/Floor/CustomCode/CustomCode";
+import DashboardWrapper from "../../pages/Dashboard/DashboardWrapper";
 
 const PublicRoutes = () => {
     let location = useLocation();
@@ -44,7 +45,7 @@ const PublicRoutes = () => {
                                     <Route exact path="/components/alert" element={<AlertBootstrap />}></Route>
                                     <Route exact path="/components/card" element={<CardBootstrap />}></Route>
                                     <Route exact path="/components/carousel" ment={<CarouselBootstrap />}></Route>
-                                    <Route exact path="/dashboard" element={<Home />}></Route>
+                                    <Route exact path="/dashboard" element={<DashboardWrapper />}></Route>
                                     <Route exact path="/charts" element={<ChartJsWrapper />}></Route>
                                     <Route exact path="/gantt-chart" element={<GanttChartWrapper />}></Route>
                                     <Route exact path="/dx-schedular" element={<DxSchedular />}></Route>
