@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import Button from 'react-bootstrap/Button';
 
 export function Buttons() {
   return (
     <>
-      <button type="button" className="btn btn-primary w-100 mb-3 text-start font-14 px-4">
-        New Brochures
-      </button>
-      <button type="button" className="btn btn-secondary w-100 mb-3 text-start font-14 px-4">
-        Brochure Design Review
-      </button>
-      <button type="button" className="btn btn-success w-100 mb-3 text-start font-14 px-4">
-        Upgrade Personal Computers
-      </button>
-      <button type="button" className="btn btn-danger w-100 mb-3 text-start font-14 px-4">
-        Install New Router in Dev Room
-      </button>
-      <button type="button" className="btn btn-warning w-100 mb-3 text-start font-14 px-4">
-        Upgrade Server Hardware
-      </button>
-      <button type="button" className="btn btn-info w-100 mb-3 text-start font-14 px-4">
-        Install New Database
-      </button>
+      <Button className="w-100 mb-3 text-start font-14" variant="primary">New Brochures</Button>
+      <Button className="w-100 mb-3 text-start font-14" variant="secondary">Brochure Design Review</Button>
+      <Button className="w-100 mb-3 text-start font-14" variant="success">Upgrade Personal Computers</Button>
+      <Button className="w-100 mb-3 text-start font-14" variant="warning">Install New Router in Dev Room</Button>
+      <Button className="w-100 mb-3 text-start font-14" variant="danger">Upgrade Server Hardware</Button>
+      <Button className="w-100 mb-3 text-start font-14" variant="info">Install New Database</Button>
     </>
   );
 }

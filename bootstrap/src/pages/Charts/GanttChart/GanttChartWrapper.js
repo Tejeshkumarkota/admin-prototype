@@ -4,6 +4,9 @@ import { Gantt, Task, ViewMode } from "gantt-task-react";
 import "gantt-task-react/dist/index.css";
 import { ViewSwitcher } from "./components/view-switcher";
 import { getStartEndDateForProject, initTasks } from "./components/Helper.jsx";
+import ViewCodePopup from "../../Components/ViewCodePopup/ViewCodePopup";
+import ViewCodeButton from "../../Components/ViewCodeButton/ViewCodeButton";
+import {GanttChartData} from '../../ViewCodeData/ViewCodeData';
 
 const GanttChartWrapper = () => {
   const [view, setView] = useState(ViewMode.Day);
@@ -62,10 +65,15 @@ const GanttChartWrapper = () => {
     console.log("On expander click Id:" + task.id);
   };
 
+  const [show, setShow] = useState(false);
+
   return (
     <>
       <Row className="mb-4">
-        <Col><h4 className="font-14 fw-boldest text-black mb-0">Gantt Chart</h4></Col>
+        <Col><h4 className="fw-boldest text-black mb-0">Gantt Chart</h4></Col>
+        <Col className="text-end">
+          <ViewCodeButton show={show} setShow={setShow} />
+        </Col>
       </Row>
       <Card>
         <Card.Body>
@@ -107,6 +115,7 @@ const GanttChartWrapper = () => {
           </Row>
         </Card.Body>
       </Card>
+      <ViewCodePopup show={show} setShow={setShow} NavData={GanttChartData} />
     </>
   );
 };

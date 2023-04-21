@@ -8,6 +8,7 @@ import { Row, Col } from 'react-bootstrap';
 import ViewCodePopup from "../Components/ViewCodePopup/ViewCodePopup";
 import ViewCodeButton from "../Components/ViewCodeButton/ViewCodeButton";
 import {ChartData} from '../ViewCodeData/ViewCodeData';
+import {GroupedBarChart} from './GroupedBarChart/GroupedBarChart';
 
 const ChartJsWrapper = () => {
   const [show, setShow] = useState(false);
@@ -27,7 +28,7 @@ const ChartJsWrapper = () => {
         <Col sm={6} xs={12} className="mb-4"><BarChart /></Col>
         <Col sm={6} xs={12} className="mb-4"><MixedBarChart /></Col>
         <Col sm={6} xs={12} className="mb-4"><StackedBarChart /></Col>
-        <Col sm={6} xs={12} className="mb-4"></Col>
+        <Col sm={6} xs={12} className="mb-4"><GroupedBarChart /></Col>
       </Row>
       <ViewCodePopup show={show} setShow={setShow} NavData={ChartData} />
     </>
