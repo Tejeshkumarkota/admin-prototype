@@ -33,7 +33,8 @@ const NavMenu = () => {
             <div id="example-collapse-text">
               <Link to={"/components/modal"}>Modal</Link>
               <Link to={"/components/accordion"}>Accordion</Link>
-              <Link to={"/components/alert"}>Alert</Link>
+              <Link to={"/components/alert"}>Alerts</Link>
+              <Link to={"/components/card"}>Card</Link>
             </div>
           </Collapse>
         </Nav.Item>
