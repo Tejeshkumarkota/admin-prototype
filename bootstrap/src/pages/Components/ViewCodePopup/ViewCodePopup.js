@@ -3,9 +3,9 @@ import { Modal, Nav } from "react-bootstrap";
 import CodeSyntaxHighlighter from "../CodeSyntaxHighlighter/CodeSyntaxHighlighter";
 
 const ViewCodePopup = ({ show, setShow, NavData, children }) => {
-  // const handleShowClose = () => setShow(!show);
+
   const [dispayContent, setDispayContent] = useState(0);
-  console.log(NavData);
+
   return (
     <>
       <Modal
@@ -20,7 +20,12 @@ const ViewCodePopup = ({ show, setShow, NavData, children }) => {
         <Modal.Body>
 
          {NavData && <>
-          <Nav justify variant="tabs" className="popup-nav-code mb-3" defaultActiveKey={NavData[0].link}>
+          <Nav 
+            justify 
+            variant="tabs" 
+            className="popup-nav-code mb-3" 
+            defaultActiveKey={NavData[0].link}
+          >
             {NavData.map((data, index) => {
               return (
                 <Nav.Item>

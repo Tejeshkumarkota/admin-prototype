@@ -12,7 +12,10 @@ const NavMenu = () => {
         className="flex-column"
       >
         <Nav.Item>
-          <Link to={"/dashboard"} activeClassName="active">
+          <Link 
+            to={"/dashboard"} 
+            activeClassName="active"
+          >
             Dashboard
           </Link>
         </Nav.Item>
@@ -29,7 +32,7 @@ const NavMenu = () => {
           <Collapse in={open}>
             <div id="example-collapse-text">
               <Link to={"/components/modal"}>Modal</Link>
-              <Link to={"/components/accordion"}>Accordian</Link>
+              <Link to={"/components/accordion"}>Accordion</Link>
               <Link to={"/components/alert"}>Alert</Link>
             </div>
           </Collapse>

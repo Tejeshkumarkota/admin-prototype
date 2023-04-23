@@ -1,7 +1,13 @@
-import { Row, Col, Card, Button, Accordion } from "react-bootstrap";
-import { BsCodeSlash } from "react-icons/bs";
+import { useState } from "react";
+import { Row, Col, Card, Accordion } from "react-bootstrap";
+import ViewCodePopup from "../ViewCodePopup/ViewCodePopup";
+import ViewCodeButton from "../ViewCodeButton/ViewCodeButton";
+import { AccordionViewSource } from "../../ViewCodeData/ViewCodeData";
 
 const AccordionBootstrap = () => {
+
+  const [show, setShow] = useState(false);
+
   return (
     <>
       <Row className="mb-4">
@@ -11,13 +17,7 @@ const AccordionBootstrap = () => {
               <h1 className="fw-medium font-22">Accordion</h1>
             </Col>
             <Col xs={12} sm={12} md={5} className="text-end">
-              <Button
-                variant="outline-primary"
-                type="button"
-                className="py-1 px-2 btn-sm"
-              >
-                <BsCodeSlash />
-              </Button>
+              <ViewCodeButton show={show} setShow={setShow} />
             </Col>
           </Row>
           <Row>
@@ -124,6 +124,7 @@ const AccordionBootstrap = () => {
           </Row>
         </Col>
       </Row>
+      <ViewCodePopup show={show} setShow={setShow} NavData={AccordionViewSource} />
     </>
   );
 };

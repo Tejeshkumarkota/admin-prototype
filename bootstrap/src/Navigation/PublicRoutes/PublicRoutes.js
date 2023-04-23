@@ -41,10 +41,10 @@ const PublicRoutes = () => {
                             <Container fluid>
                                 <Routes>
                                     <Route exact path="/components/modal" element={<ModalPopup />}></Route>
-                                    <Route exact path="/components/accordion" ent={<AccordionBootstrap />}></Route>
+                                    <Route exact path="/components/accordion" element={<AccordionBootstrap />}></Route>
                                     <Route exact path="/components/alert" element={<AlertBootstrap />}></Route>
                                     <Route exact path="/components/card" element={<CardBootstrap />}></Route>
-                                    <Route exact path="/components/carousel" ment={<CarouselBootstrap />}></Route>
+                                    <Route exact path="/components/carousel" element={<CarouselBootstrap />}></Route>
                                     <Route exact path="/dashboard" element={<DashboardWrapper />}></Route>
                                     <Route exact path="/charts" element={<ChartJsWrapper />}></Route>
                                     <Route exact path="/gantt-chart" element={<GanttChartWrapper />}></Route>
