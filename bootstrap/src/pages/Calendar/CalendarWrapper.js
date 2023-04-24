@@ -1,15 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Row, Col, Card } from 'react-bootstrap';
-
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
-
-
 import ViewCodePopup from "../Components/ViewCodePopup/ViewCodePopup";
 import ViewCodeButton from "../Components/ViewCodeButton/ViewCodeButton";
-// import { FloorPlanAdminData } from '../ViewCodeData/ViewCodeData';
+import {FullCalendarData} from '../ViewCodeData/ViewCodeData';
 import events from './Components/events';
 
 const CalendarWrapper = () => {
@@ -168,7 +165,7 @@ const CalendarWrapper = () => {
                     </Card>
                 </Col>
             </Row>
-            {/* <ViewCodePopup show={show} setShow={setShow} NavData={FloorPlanAdminData} /> */}
+            <ViewCodePopup show={show} setShow={setShow} NavData={FullCalendarData} />
         </>
     );
 }
