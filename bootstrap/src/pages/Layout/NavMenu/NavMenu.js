@@ -38,6 +38,16 @@ const NavMenu = () => {
             </div>
           </Collapse>
         </Nav.Item>
+
+        <Nav.Item>
+          <Link 
+            to={"/calendar"} 
+            activeClassName="active"
+          >
+            Calendar
+          </Link>
+        </Nav.Item>
+
         <Nav.Item>
           <Link
             to={" "}
@@ -54,7 +64,6 @@ const NavMenu = () => {
               <Link to={""}>Apex Chart</Link>
               <Link to={"/gantt-chart"}>Gantt Chart</Link>
               <Link to={"/dx-schedular"}>DX Scheduler</Link>
-              <Link to={"/floor-plan-admin"}>Floor Plan Admin</Link>
             </div>
           </Collapse>
         </Nav.Item>
@@ -70,6 +79,7 @@ const NavMenu = () => {
           </Link>
           <Collapse in={open}>
             <div id="example-collapse-text2">
+              <Link to={"/floor-plan-admin"}>Floor Plan Admin</Link>
               <Link to={"/floor-custom-code"}>Floor Custom Code</Link>
             </div>
           </Collapse>

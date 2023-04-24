@@ -18,6 +18,7 @@ import Header from "../../pages/Layout/Header/Header";
 import Sidebar from "../../pages/Layout/Sidebar/Sidebar";
 import {CustomCode} from "../../pages/Floor/CustomCode/CustomCode";
 import DashboardWrapper from "../../pages/Dashboard/DashboardWrapper";
+import {CalendarWrapper} from "../../pages/Calendar/CalendarWrapper";
 
 const PublicRoutes = () => {
     let location = useLocation();
@@ -51,6 +52,7 @@ const PublicRoutes = () => {
                                     <Route exact path="/dx-schedular" element={<DxSchedular />}></Route>
                                     <Route exact path="/floor-plan-admin" element={<FloorPlanAdmin />}></Route>
                                     <Route exact path="/floor-custom-code" element={<CustomCode />}></Route>
+                                    <Route exact path="/calendar" element={<CalendarWrapper />}></Route>
                                 </Routes>
                             </Container>
                         </div>
