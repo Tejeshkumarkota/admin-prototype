@@ -9,6 +9,8 @@ import ViewCodeButton from "../Components/ViewCodeButton/ViewCodeButton";
 import {ChartData} from '../ViewCodeData/ViewCodeData';
 import {LineChart} from './LineChart/LineChart';
 import {ScatterChart} from './ScatterChart/ScatterChart';
+import {RadarChart} from './RadarChart/RadarChart';
+import {PortfolioChart} from './PortfolioChart/PortfolioChart';
 
 const ApexChartJsWrapper = () => {
   const [show, setShow] = useState(false);
@@ -29,6 +31,8 @@ const ApexChartJsWrapper = () => {
         <Col sm={6} xs={12} className="mb-4"><BarChart /></Col>
         <Col sm={6} xs={12} className="mb-4"><MixedBarChart /></Col>
         <Col sm={6} xs={12} className="mb-4"><ScatterChart /></Col>
+        <Col sm={6} xs={12} className="mb-4"><RadarChart /></Col>
+        <Col sm={6} xs={12} className="mb-4"><PortfolioChart /></Col>
       </Row>
       <ViewCodePopup show={show} setShow={setShow} NavData={ChartData} />
     </>

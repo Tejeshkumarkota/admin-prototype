@@ -64,7 +64,7 @@ export function LineChart() {
 
   return (
     <>
-      <Card>
+      <Card className="h-100">
         <Card.Body>
           <Row className="align-items-center mb-3">
             <Col><h6 className="m-0">Line Chart</h6></Col>

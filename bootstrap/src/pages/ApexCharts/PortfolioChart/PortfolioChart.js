@@ -15,7 +15,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-export function BarChart() {
+export function PortfolioChart() {
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -29,7 +29,6 @@ export function BarChart() {
     responsive: true,
     plugins: {
       legend: {
-        display: false,
         position: "top",
       },
       title: {
@@ -51,12 +50,13 @@ export function BarChart() {
             lineHeight: 0.5,
           },
         },
-        label: "In-Progress",
+        label: "Done",
         data: [45, 32, 42, 35, 64, 45, 63, 25, 45, 55, 46, 65],
         backgroundColor: "#002C6A",
-        barThickness: 45,
+        barThickness: 15,
         borderColor: "transparent",
-        maxBarThickness: 30,
+        maxBarThickness: 15,
+        borderWidth: 2,
         borderRadius: {
           bottomRight: 2,
           bottomLeft: 2,
@@ -64,27 +64,52 @@ export function BarChart() {
           topLeft: 2,
         },
       },
-//      {
-//        datalabels: {
-//          color: "#EAEFF5",
-//          font: {
-//            size: 16,
-//            family: "'Poppins', sans-serif",
-//            lineHeight: 0.5,
-//          },
-//        },
-//        label: "Whole",
-//        data: [100, 80, 100, 80, 100, 80],
-//        backgroundColor: "#EAEFF5",
-//        barThickness: 45,
-//        maxBarThickness: 45,
-//        borderRadius: {
-//          bottomRight: 0,
-//          bottomLeft: 0,
-//          topRight: 5,
-//          topLeft: 5,
-//        },
-//      },
+      {
+        datalabels: {
+          color: "rgba(255, 99, 132, 1)",
+          font: {
+            size: 16,
+            family: "'Poppins', sans-serif",
+            lineHeight: 0.5,
+          },
+        },
+        label: "In-Progress",
+        data: [12, 16, 15, 18, 19, 20, 23, 21, 15, 23, 14, 17],
+        backgroundColor: "rgba(255, 99, 132, 1)",
+        barThickness: 15,
+        borderColor: "transparent",
+        maxBarThickness: 15,
+        borderWidth: 2,
+        borderRadius: {
+          bottomRight: 2,
+          bottomLeft: 2,
+          topRight: 2,
+          topLeft: 2,
+        },
+      },
+      {
+        datalabels: {
+          color: "#e9ecef",
+          font: {
+            size: 16,
+            family: "'Poppins', sans-serif",
+            lineHeight: 0.5,
+          },
+        },
+        label: "Rejected",
+        data: [5, 4, 6, 2, 6, 3, 4, 5, 6, 4, 3, 4],
+        backgroundColor: "#e9ecef",
+        barThickness: 15,
+        borderColor: "transparent",
+        maxBarThickness: 15,
+        borderWidth: 2,
+        borderRadius: {
+          bottomRight: 2,
+          bottomLeft: 2,
+          topRight: 2,
+          topLeft: 2,
+        },
+      },
     ],
   };
 
@@ -95,7 +120,7 @@ export function BarChart() {
       <Card className="h-100">
         <Card.Body>
           <Row className="align-items-center mb-3">
-            <Col><h6 className="m-0">Bar Chart</h6></Col>
+            <Col><h6 className="m-0">Portfolio Chart</h6></Col>
             <Col>
               <Row>
                 <Col>

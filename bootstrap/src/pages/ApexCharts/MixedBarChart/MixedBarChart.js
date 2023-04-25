@@ -65,10 +65,10 @@ const [sOptions, setSOptions] = useState(["select", "2001", "2002", "2003", "200
 
  return (
      <>
-       <Card>
+       <Card className="h-100">
          <Card.Body>
            <Row className="align-items-center mb-3">
-             <Col><h6 className="m-0">Bar Chart</h6></Col>
+             <Col><h6 className="m-0">Mixed Chart</h6></Col>
              <Col>
                <Row>
                  <Col>
