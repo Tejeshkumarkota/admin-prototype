@@ -143,7 +143,6 @@ const CalendarWrapper = () => {
                                     ))}
                                 </Col>
                             </Row>
-
                         </Card.Body>
                     </Card>
                 </Col>

@@ -1587,11 +1587,13 @@ export const FullCalendarData = [
     import FullCalendar from "@fullcalendar/react";
     import dayGridPlugin from "@fullcalendar/daygrid";
     import timeGridPlugin from "@fullcalendar/timegrid";
+    import listPlugin from '@fullcalendar/list';
     import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
     import events from './Components/events'; `,
     show_content: `
     const [state, setState] = useState({
       weekendsVisible: true,
+      initialView: 'listWeek',
       externalEvents: [
           { title: "Art 1", color: "#0097a7", id: 34432, custom: "fdsfdsfds" },
           { title: "Art 2", color: "#f44336", id: 323232 },
@@ -1683,7 +1685,12 @@ export const FullCalendarData = [
       <Col sm={4} md={3}>
           <Card>
               <Card.Body>
-                  <div id="external-events">
+                <Row>
+                  <Col sm={12}>
+                      <h5 className="border-bottom pb-2 mb-4">Full calendar</h5>
+                      <h6 className="mb-3 text-muted">Draggable Events</h6>
+                  </Col>
+                  <Col id="external-events" sm={12}>
                       {state.externalEvents.map((event) => (
                           <div
                               className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2"
@@ -1706,31 +1713,32 @@ export const FullCalendarData = [
                               </div>
                           </div>
                       ))}
-                  </div>
+                  </Col>
+                </Row>
               </Card.Body>
           </Card>
       </Col>
       <Col sm={8} md={9}>
           <Card>
               <Card.Body>
-                  <FullCalendar
-                      plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-                      headerToolbar={{
-                          left: "prev,next today",
-                          center: "title",
-                          right: "dayGridMonth,timeGridWeek,timeGridDay"
-                      }}
-                      initialView="dayGridMonth"
-                      editable={true}
-                      selectable={true}
-                      selectMirror={true}
-                      dayMaxEvents={true}
-                      weekends={state.weekendsVisible}
-                      events={events}
-                      droppable={true}
-                      calendarEvents={state.calendarEvents}
-                      eventReceive={handleEventReceive}
-                  />
+                <FullCalendar
+                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+                    headerToolbar={{
+                        left: "prev,today,next",
+                        center: "title",
+                        right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
+                    }}
+                    initialView="dayGridMonth"
+                    editable={true}
+                    selectable={true}
+                    selectMirror={true}
+                    dayMaxEvents={true}
+                    weekends={state.weekendsVisible}
+                    events={events}
+                    droppable={true}
+                    calendarEvents={state.calendarEvents}
+                    eventReceive={handleEventReceive}
+                />
               </Card.Body>
           </Card>
       </Col>
@@ -1741,15 +1749,16 @@ export const FullCalendarData = [
     imports: ` `,
     show_content: `
     const events = [
-      { title: "AZUL +5", start: getDate("YEAR-MONTH-02") },
-      { title: "AZUL +5", start: getDate("YEAR-MONTH-03") },
+      { title: "AZUL +6", start: getDate("YEAR-MONTH-02") },
+      { title: "AZUL +7", start: getDate("YEAR-MONTH-03") },
       {
         title: "VERDE +10",
         start: getDate("YEAR-MONTH-06"),
-        backgroundColor: "green"
+        backgroundColor: "green",
+        textColor: "white"
       },
       { title: "AMARILLO -5", start: getDate("YEAR-MONTH-07") },
-      { title: "AZUL +5", start: getDate("YEAR-MONTH-08") },
+      { title: "AZUL +5", start: getDate("YEAR-MONTH-08"),  },
       {
         title: "AMARILLO -5",
         start: getDate("YEAR-MONTH-09"),
@@ -1767,7 +1776,7 @@ export const FullCalendarData = [
         title: "AZUL +5",
         start: getDate("YEAR-MONTH-22"),
         backgroundColor: "red",
-        textColor: "black"
+        textColor: "white"
       },
       {
         start: getDate("YEAR-MONTH-23"),
