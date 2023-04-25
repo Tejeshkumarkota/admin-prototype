@@ -62,7 +62,7 @@ const NavMenu = () => {
           <Collapse in={open}>
             <div id="example-collapse-text1">
               <Link to={"/charts"}>Chart Js</Link>
-              <Link to={""}>Apex Chart</Link>
+              <Link to={"/apex-chart"}>Apex Chart</Link>
               <Link to={"/gantt-chart"}>Gantt Chart</Link>
               <Link to={"/dx-schedular"}>DX Scheduler</Link>
             </div>

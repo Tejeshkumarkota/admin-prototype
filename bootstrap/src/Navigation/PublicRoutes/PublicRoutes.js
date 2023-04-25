@@ -19,6 +19,7 @@ import Sidebar from "../../pages/Layout/Sidebar/Sidebar";
 import {CustomCode} from "../../pages/Floor/CustomCode/CustomCode";
 import DashboardWrapper from "../../pages/Dashboard/DashboardWrapper";
 import {CalendarWrapper} from "../../pages/Calendar/CalendarWrapper";
+import {ApexChartJsWrapper} from "../../pages/ApexCharts/ApexChartJsWrapper";
 
 const PublicRoutes = () => {
     let location = useLocation();
@@ -53,6 +54,7 @@ const PublicRoutes = () => {
                                     <Route exact path="/floor-plan-admin" element={<FloorPlanAdmin />}></Route>
                                     <Route exact path="/floor-custom-code" element={<CustomCode />}></Route>
                                     <Route exact path="/calendar" element={<CalendarWrapper />}></Route>
+                                    <Route exact path="/apex-chart" element={<ApexChartJsWrapper />}></Route>
                                 </Routes>
                             </Container>
                         </div>
