@@ -3,20 +3,22 @@ import { Row, Col, Card } from 'react-bootstrap';
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import listPlugin from '@fullcalendar/list';
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 import ViewCodePopup from "../Components/ViewCodePopup/ViewCodePopup";
 import ViewCodeButton from "../Components/ViewCodeButton/ViewCodeButton";
-import {FullCalendarData} from '../ViewCodeData/ViewCodeData';
+import { FullCalendarData } from '../ViewCodeData/ViewCodeData';
 import events from './Components/events';
 
 const CalendarWrapper = () => {
     const [state, setState] = useState({
         weekendsVisible: true,
+        initialView: 'listWeek',
         externalEvents: [
-            { title: "Art 1", color: "#0097a7", id: 34432, custom: "fdsfdsfds" },
-            { title: "Art 2", color: "#f44336", id: 323232 },
-            { title: "Art 3", color: "#f57f17", id: 1111 },
-            { title: "Art 4", color: "#90a4ae", id: 432432 }
+            { title: "Art 1", id: 34432, custom: "fdsfdsfds" },
+            { title: "Art 2", id: 323232 },
+            { title: "Art 3", id: 1111 },
+            { title: "Art 4", id: 432432 }
         ],
         calendarEvents: [
             {
@@ -98,8 +100,6 @@ const CalendarWrapper = () => {
         });
     };
 
-
-
     const [show, setShow] = useState(false);
     return (
         <>
@@ -113,30 +113,37 @@ const CalendarWrapper = () => {
                 <Col sm={4} md={3}>
                     <Card>
                         <Card.Body>
-                            <div id="external-events">
-                                {state.externalEvents.map((event) => (
-                                    <div
-                                        className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2"
-                                        title={event.title}
-                                        data-id={event.id}
-                                        data-color={event.color}
-                                        data-custom={event.custom}
-                                        key={event.id}
-                                        style={{
-                                            backgroundColor: event.color,
-                                            borderColor: event.color,
-                                            cursor: "pointer"
-                                        }}
-                                    >
-                                        <div className="fc-event-main">
-                                            <div>
-                                                <strong>{event.title}</strong>
+                            <Row>
+                                <Col sm={12}>
+                                    <h5 className="border-bottom pb-2 mb-4">Full calendar</h5>
+                                    <h6 className="mb-3 text-muted">Draggable Events</h6>
+                                </Col>
+                                <Col id="external-events" sm={12}>
+                                    {state.externalEvents.map((event) => (
+                                        <div
+                                            className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2"
+                                            title={event.title}
+                                            data-id={event.id}
+                                            data-color={event.color}
+                                            data-custom={event.custom}
+                                            key={event.id}
+                                            style={{
+                                                backgroundColor: event.color,
+                                                borderColor: event.color,
+                                                cursor: "pointer"
+                                            }}
+                                        >
+                                            <div className="fc-event-main">
+                                                <div>
+                                                    <strong>{event.title}</strong>
+                                                </div>
+                                                {event.custom}
                                             </div>
-                                            {event.custom}
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
+                                    ))}
+                                </Col>
+                            </Row>
+
                         </Card.Body>
                     </Card>
                 </Col>
@@ -144,11 +151,11 @@ const CalendarWrapper = () => {
                     <Card>
                         <Card.Body>
                             <FullCalendar
-                                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
                                 headerToolbar={{
-                                    left: "prev,next today",
+                                    left: "prev,today,next",
                                     center: "title",
-                                    right: "dayGridMonth,timeGridWeek,timeGridDay"
+                                    right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
                                 }}
                                 initialView="dayGridMonth"
                                 editable={true}

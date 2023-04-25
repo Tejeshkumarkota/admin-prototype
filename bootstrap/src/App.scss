@@ -567,3 +567,31 @@ input:checked + .Slider:before {
   }
 }
 // Slick Slider CSS End
+
+// Calendar Start //
+.fc-event{
+  margin-bottom: 10px !important;
+  padding: 8px;
+  border-radius: 2px;
+  background: rgba(101,113,255,.2);
+  border: 0;
+  border-left: 3px solid #6571ff;
+  color: #000;
+  font-weight: 500;
+  .fc-event-main{
+    color:#000;
+  }
+}
+.fc-col-header-cell-cushion{
+  text-decoration: none;
+}
+.fc-daygrid-day-number{
+  text-decoration: none;
+}
+.fc-list-day-text{
+  color: orange;
+}
+.fc-list-day-side-text{
+  color: orange;
+}
+// Calendar End //
