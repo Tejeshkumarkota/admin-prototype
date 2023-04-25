@@ -549,3 +549,21 @@ input:checked + .Slider:before {
     }
   }
 }
+// Slick Slider CSS Start
+.slick-slider {
+  &.blue {
+    h4 {
+      font-size: 36px;
+      line-height: 100px;
+      background: #0d6efd;
+      color: #fff;
+      margin: 10px;
+      text-align: center;
+    }
+  }
+  .slick-prev:before, 
+  .slick-next:before {
+    color: #040404;
+  }
+}
+// Slick Slider CSS End

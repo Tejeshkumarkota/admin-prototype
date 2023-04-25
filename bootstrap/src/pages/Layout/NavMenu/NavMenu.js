@@ -35,6 +35,7 @@ const NavMenu = () => {
               <Link to={"/components/accordion"}>Accordion</Link>
               <Link to={"/components/alert"}>Alerts</Link>
               <Link to={"/components/card"}>Card</Link>
+              <Link to={"/components/carousel"}>Carousel</Link>
             </div>
           </Collapse>
         </Nav.Item>
