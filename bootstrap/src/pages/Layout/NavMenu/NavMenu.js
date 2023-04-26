@@ -50,6 +50,15 @@ const NavMenu = () => {
         </Nav.Item>
 
         <Nav.Item>
+          <Link 
+            to={"/kpi-template"} 
+            activeClassName="active"
+          >
+            KPI Template 
+          </Link>
+        </Nav.Item>
+
+        <Nav.Item>
           <Link
             to={" "}
             className="nav-drop"
@@ -80,7 +89,9 @@ const NavMenu = () => {
           </Link>
           <Collapse in={open}>
             <div id="example-collapse-text2">
+              <h5 className="pt-1 font-14 m-0">DX Diagram</h5>
               <Link to={"/floor-plan-admin"}>Floor Plan Admin</Link>
+              <h5 className="pt-2 font-14 m-0">Custom Code</h5>
               <Link to={"/floor-custom-code"}>Floor Custom Code</Link>
             </div>
           </Collapse>
