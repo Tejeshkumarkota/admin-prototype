@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 const NavMenu = () => {
   const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
   return (
     <>
       <Nav
@@ -68,13 +70,13 @@ const NavMenu = () => {
           <Link
             to={" "}
             className="nav-drop"
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen2(!open2)}
             aria-controls="example-collapse-text1"
-            aria-expanded={open}
+            aria-expanded={open2}
           >
             Charts
           </Link>
-          <Collapse in={open}>
+          <Collapse in={open2}>
             <div id="example-collapse-text1">
               <Link to={"/charts"}>Chart Js</Link>
               <Link to={"/apex-chart"}>Apex Chart</Link>
@@ -87,13 +89,13 @@ const NavMenu = () => {
           <Link
             to={" "}
             className="nav-drop"
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen3(!open3)}
             aria-controls="example-collapse-text2"
-            aria-expanded={open}
+            aria-expanded={open3}
           >
             Floor Plan
           </Link>
-          <Collapse in={open}>
+          <Collapse in={open3}>
             <div id="example-collapse-text2">
               <h5 className="pt-1 font-14 m-0">DX Diagram</h5>
               <Link to={"/floor-plan-admin"}>Floor Plan Admin</Link>
