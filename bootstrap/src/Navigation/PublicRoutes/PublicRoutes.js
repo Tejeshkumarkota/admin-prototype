@@ -21,6 +21,12 @@ import DashboardWrapper from "../../pages/Dashboard/DashboardWrapper";
 import {CalendarWrapper} from "../../pages/Calendar/CalendarWrapper";
 import {ApexChartJsWrapper} from "../../pages/ApexCharts/ApexChartJsWrapper";
 import {KPITemplateWrapper} from '../../pages/KPITemplate/KPITemplateWrapper';
+import CollapseBootstrap from '../../pages/Components/Collapse/CollapseBootstrap';
+import DropdownBootstrap from '../../pages/Components/Dropdown/DropdownBootstrap';
+import ListGroupBootstrap from '../../pages/Components/ListGroup/ListGroupBootstrap';
+import OffCanvasBootstrap from '../../pages/Components/OffCanvas/OffCanvasBootstrap';
+import ScrollspyBootstrap from '../../pages/Components/Scrollspy/ScrollspyBootstrap';
+import NavsTabsBootsrap from '../../pages/Components/Navs&Tabs/NavsTabsBootsrap';
 
 const PublicRoutes = () => {
     let location = useLocation();
@@ -48,6 +54,13 @@ const PublicRoutes = () => {
                                     <Route exact path="/components/alert" element={<AlertBootstrap />}></Route>
                                     <Route exact path="/components/card" element={<CardBootstrap />}></Route>
                                     <Route exact path="/components/carousel" element={<CarouselBootstrap />}></Route>
+                                    <Route exact path="/components/collapse" element={<CollapseBootstrap />}></Route>
+                                    <Route exact path="/components/dropdown" element={<DropdownBootstrap />}></Route>
+                                    <Route exact path="/components/list-group" element={<ListGroupBootstrap />}></Route>
+                                    <Route exact path="/components/off-canvas" element={<OffCanvasBootstrap />}></Route>
+                                    <Route exact path="/components/scrollspy" element={<ScrollspyBootstrap />}></Route>
+                                    <Route exact path="/components/navs-tabs" element={<NavsTabsBootsrap />}></Route>
+
                                     <Route exact path="/dashboard" element={<DashboardWrapper />}></Route>
                                     <Route exact path="/charts" element={<ChartJsWrapper />}></Route>
                                     <Route exact path="/gantt-chart" element={<GanttChartWrapper />}></Route>

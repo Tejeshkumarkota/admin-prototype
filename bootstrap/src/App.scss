@@ -595,3 +595,8 @@ input:checked + .Slider:before {
   color: orange;
 }
 // Calendar End //
+
+.scrollyspy-div{
+  height: 250px;
+  overflow-y: scroll;
+}

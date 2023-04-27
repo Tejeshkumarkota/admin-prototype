@@ -36,6 +36,12 @@ const NavMenu = () => {
               <Link to={"/components/alert"}>Alerts</Link>
               <Link to={"/components/card"}>Card</Link>
               <Link to={"/components/carousel"}>Carousel</Link>
+              <Link to={"/components/collapse"}>Collapse</Link>
+              <Link to={"/components/dropdown"}>Dropdown</Link>
+              <Link to={"/components/list-group"}>List Group</Link>
+              <Link to={"/components/off-canvas"}>Off Canvas</Link>
+              <Link to={"/components/scrollspy"}>Scrollspy</Link>
+              <Link to={"/components/navs-tabs"}>Navs and Tabs</Link>
             </div>
           </Collapse>
         </Nav.Item>

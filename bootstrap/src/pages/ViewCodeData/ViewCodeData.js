@@ -1800,3 +1800,222 @@ export const FullCalendarData = [
     export default events; `,
   },
 ];
+
+// Collapse Component
+export const CollapseViewSource = [
+  {
+    title: "Collapse",
+    imports: `
+    import { useState } from "react";
+    import { Row, Col, Card, Button, Collapse, Nav } from "react-bootstrap";`,
+    show_content: `
+    const [open, setOpen] = useState(false);
+    
+    <Card>
+      <Card.Body>        
+        <div className="d-flex">
+          <Nav.Link
+            href="#"
+            onClick={(event) => {
+              event.preventDefault()
+              setOpen(!open)
+            }}
+            aria-controls="link-with-href"
+            aria-expanded={open}
+            className="mb-3 btn btn-primary text-white me-4"
+          >
+            Link with href
+          </Nav.Link>
+          <Button
+            onClick={() => setOpen(!open)}
+            aria-controls="link-with-href"
+            aria-expanded={open}
+            className="mb-3"
+          >
+            Button with data-bs-target
+          </Button>
+        </div>
+        <Collapse in={open}>
+          <div id="link-with-href">
+            <Card>
+              <Card.Body>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+                labore wes anderson cred nesciunt sapiente ea proident.
+              </Card.Body>
+            </Card>
+          </div>
+        </Collapse>
+      </Card.Body>
+    </Card>`,
+  },
+];
+
+// Dropdown Component
+export const DropdownViewSource = [
+  {
+    title: "Dropdown",
+    imports: `
+    import { useState } from "react";
+    import { Row, Col, Card, Dropdown, DropdownButton } from "react-bootstrap";`,
+    show_content: `
+    const list = [
+      { key: "Dropdown text change", value: "Dropdown text change" },
+      { key: "Yellow", value: "yellow" },
+      { key: "Blue", value: "blue" },
+      { key: "Green", value: "green" }
+    ];
+
+    const [selected, setSelected] = useState({});
+    const handleSelect = (key, event) => {
+        setSelected({ key, value: event.target.value });
+    };
+    
+    <Card>
+      <Card.Body>
+          <div className="d-flex">
+              <Dropdown className="me-4">
+                  <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                      Dropdown Button
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                  </Dropdown.Menu>
+              </Dropdown>
+
+              <DropdownButton
+                  id="dropdown-text-change"
+                  variant="primary"
+                  className="floatRight"
+                  onSelect={handleSelect}
+                  title={selected?.key || list[0].key}
+              >
+                  {list.map((item, index) => {
+                      return (
+                          <Dropdown.Item key={index} eventKey={item.key}>
+                              {item.value}
+                          </Dropdown.Item>
+                      );
+                  })}
+              </DropdownButton>
+          </div>
+      </Card.Body>
+    </Card>`,
+  },
+];
+
+// ListGroup Component
+export const ListGroupViewSource = [
+  {
+    title: "List Group",
+    imports: `
+    import { useState } from "react";
+    import { Row, Col, Card, ListGroup } from "react-bootstrap";`,
+    show_content: `       
+    <Card>
+      <Card.Body>
+          <ListGroup as="ul">
+              <ListGroup.Item as="li" active> An active item </ListGroup.Item>
+              <ListGroup.Item as="li">A second item</ListGroup.Item>
+              <ListGroup.Item as="li" disabled> A third item </ListGroup.Item>
+              <ListGroup.Item as="li">A fourth item</ListGroup.Item>
+          </ListGroup>
+      </Card.Body>
+    </Card>`,
+  },
+];
+
+// ListGroup Component
+export const OffCanvasViewSource = [
+  {
+    title: "Off Canvas",
+    imports: `
+    import { useState } from "react";
+    import { Row, Col, Card, Button, Nav } from "react-bootstrap";
+    import Offcanvas from 'react-bootstrap/Offcanvas';`,
+    show_content: `       
+    <Card>
+      <Card.Body>
+          <div className="d-flex">
+              <Nav.Link
+                  href="#"
+                  onClick={handleShow}
+                  className="btn btn-primary text-white me-4 text-uppercase font-12"
+                  variant="primary"
+              >
+                  Link with href
+              </Nav.Link>
+              <Button variant="primary" onClick={handleShow} className="text-uppercase font-12">
+                  Button with data-bs-target
+              </Button>
+          </div>
+
+          <Offcanvas show={visible} onHide={handleClose} backdrop="static">
+              <Offcanvas.Header closeButton>
+                  <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                  I will not close if you click outside of me.
+              </Offcanvas.Body>
+          </Offcanvas>
+      </Card.Body>
+    </Card>`,
+  },
+];
+
+// Scrollspy Component
+export const ScrollspyViewSource = [
+  {
+    title: "Scrollspy",
+    imports: `
+    import { useState } from "react";
+    import { Row, Col, Card, ListGroup } from "react-bootstrap";
+    import Scrollspy from 'react-scrollspy'`,
+    show_content: `       
+    <Card>
+      <Card.Body>
+          <Row>
+              <Col xs={4} sm={4} md={4}>
+                  <Scrollspy items={['section-1', 'section-2', 'section-3']} currentClassName="is-current" className="m-0 p-0">
+                      <ListGroup defaultActiveKey="#section-1">
+                          <ListGroup.Item action href="#section-1">
+                              Item 1
+                          </ListGroup.Item>
+                          <ListGroup.Item action href="#section-2">
+                              Item 2
+                          </ListGroup.Item>
+                          <ListGroup.Item action href="#section-3">
+                              Item 3
+                          </ListGroup.Item>
+                      </ListGroup>
+                  </Scrollspy>
+              </Col>
+              <Col xs={8} sm={8} md={8}>
+                  <div className="scrollyspy-div">
+                      <section id="section-1">
+                          <h3>Item 1</h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                              sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                      </section>
+                      <section id="section-2">
+                          <h3>Item 2</h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                              sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                      </section>
+                      <section id="section-3">
+                          <h3>Item 3</h3>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                              sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+                      </section>
+                  </div>
+              </Col>
+          </Row>
+      </Card.Body>
+    </Card>`,
+  },
+];
