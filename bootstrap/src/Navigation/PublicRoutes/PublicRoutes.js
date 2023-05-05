@@ -26,7 +26,14 @@ import DropdownBootstrap from '../../pages/Components/Dropdown/DropdownBootstrap
 import ListGroupBootstrap from '../../pages/Components/ListGroup/ListGroupBootstrap';
 import OffCanvasBootstrap from '../../pages/Components/OffCanvas/OffCanvasBootstrap';
 import ScrollspyBootstrap from '../../pages/Components/Scrollspy/ScrollspyBootstrap';
-import NavsTabsBootsrap from '../../pages/Components/Navs&Tabs/NavsTabsBootsrap';
+import NavsTabsBootstrap from '../../pages/Components/Navs&Tabs/NavsTabsBootstrap';
+import PaginationBootstrap from '../../pages/Components/Pagination/PaginationBootstrap';
+import PopoversBootstrap from '../../pages/Components/Popovers/PopoversBootstrap';
+import ProgressBootstrap from '../../pages/Components/Progress/ProgressBootstrap';
+import BadgeBootstrap from '../../pages/Components/Badge/BadgeBootstrap';
+import BreadcrumbBootstrap from '../../pages/Components/Breadcrumb/BreadcrumbBootstrap';
+import ButtonsBootstrap from '../../pages/Components/Buttons/ButtonsBootstrap';
+import BasicFormBootstrap from '../../pages/Components/BasicForm/BasicFormBootstrap';
 
 const PublicRoutes = () => {
     let location = useLocation();
@@ -59,7 +66,14 @@ const PublicRoutes = () => {
                                     <Route exact path="/components/list-group" element={<ListGroupBootstrap />}></Route>
                                     <Route exact path="/components/off-canvas" element={<OffCanvasBootstrap />}></Route>
                                     <Route exact path="/components/scrollspy" element={<ScrollspyBootstrap />}></Route>
-                                    <Route exact path="/components/navs-tabs" element={<NavsTabsBootsrap />}></Route>
+                                    <Route exact path="/components/navs-tabs" element={<NavsTabsBootstrap />}></Route>
+                                    <Route exact path="/components/pagination" element={<PaginationBootstrap />}></Route>
+                                    <Route exact path="/components/popovers" element={<PopoversBootstrap />}></Route>
+                                    <Route exact path="/components/progress" element={<ProgressBootstrap />}></Route>
+                                    <Route exact path="/components/badge" element={<BadgeBootstrap />}></Route>
+                                    <Route exact path="/components/breadcrumb" element={<BreadcrumbBootstrap />}></Route>
+                                    <Route exact path="/components/buttons" element={<ButtonsBootstrap />}></Route>
+                                    <Route exact path="/components/basic-form" element={<BasicFormBootstrap />}></Route>
 
                                     <Route exact path="/dashboard" element={<DashboardWrapper />}></Route>
                                     <Route exact path="/charts" element={<ChartJsWrapper />}></Route>

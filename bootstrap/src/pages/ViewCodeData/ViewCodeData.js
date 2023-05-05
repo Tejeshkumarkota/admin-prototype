@@ -2019,3 +2019,539 @@ export const ScrollspyViewSource = [
     </Card>`,
   },
 ];
+
+// Navs and tabs Component
+export const NavsAndTabsData = [
+  {
+    title: "Navs and Tabs",
+    imports: `
+    import { useState } from "react";
+    import { Row, Col, Card, Tab, Tabs, Nav } from "react-bootstrap";
+    import { ScrollspyViewSource } from "../../ViewCodeData/ViewCodeData";
+    import { Text } from './Componants/Text';`,
+    show_content: `       
+    <Card>
+      <Card.Body>
+          <Row>
+              <Col sm={12} className="mb-5">
+                  <p className="fw-medium font-16 mb-4">Tabs</p>
+                  <Tabs
+                      id="controlled-tab-example"
+                      activeKey={key}
+                      onSelect={(k) => setKey(k)}
+                      className="mb-3"
+                  >
+                      <Tab eventKey="home" title="Home">
+                          <Text />
+                      </Tab>
+                      <Tab eventKey="profile" title="Profile">
+                          <Text />
+                      </Tab>
+                      <Tab eventKey="contact" title="Contact">
+                          <Text />
+                      </Tab>
+                  </Tabs>
+              </Col>
+              <Col sm={12}>
+                  <p className="fw-medium font-16 mb-4">Left Side Pills</p>
+              </Col>
+              <Col sm={12} className="mb-5">
+                  <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+                      <Row>
+                          <Col sm={3}>
+                              <Nav variant="pills" className="flex-column">
+                                  <Nav.Item>
+                                      <Nav.Link eventKey="first">Home</Nav.Link>
+                                  </Nav.Item>
+                                  <Nav.Item>
+                                      <Nav.Link eventKey="second">Profile</Nav.Link>
+                                  </Nav.Item>
+                                  <Nav.Item>
+                                      <Nav.Link eventKey="contact">Contact</Nav.Link>
+                                  </Nav.Item>
+                              </Nav>
+                          </Col>
+                          <Col sm={9}>
+                              <Tab.Content>
+                                  <Tab.Pane eventKey="first">
+                                      <Text />
+                                  </Tab.Pane>
+                                  <Tab.Pane eventKey="second">
+                                      <Text />
+                                  </Tab.Pane>
+                                  <Tab.Pane eventKey="contact">
+                                      <Text />
+                                  </Tab.Pane>
+                              </Tab.Content>
+                          </Col>
+                      </Row>
+                  </Tab.Container>
+              </Col>
+              <Col sm={12}>
+                  <p className="fw-medium font-16 mb-4">Pills</p>
+              </Col>
+              <Col sm={12}>
+                  <Tab.Container defaultActiveKey="first">
+                      <Row>
+                          <Col sm={12} className="mb-3">
+                              <Nav variant="pills" className="d-flex">
+                                  <Nav.Item>
+                                      <Nav.Link eventKey="first">Home</Nav.Link>
+                                  </Nav.Item>
+                                  <Nav.Item>
+                                      <Nav.Link eventKey="second">Profile</Nav.Link>
+                                  </Nav.Item>
+                                  <Nav.Item>
+                                      <Nav.Link eventKey="contact">Contact</Nav.Link>
+                                  </Nav.Item>
+                              </Nav>
+                          </Col>
+                          <Col sm={12}>
+                              <Tab.Content>
+                                  <Tab.Pane eventKey="first">
+                                      <Text />
+                                  </Tab.Pane>
+                                  <Tab.Pane eventKey="second">
+                                      <Text />
+                                  </Tab.Pane>
+                                  <Tab.Pane eventKey="contact">
+                                      <Text />
+                                  </Tab.Pane>
+                              </Tab.Content>
+                          </Col>
+                      </Row>
+                  </Tab.Container>
+              </Col>
+          </Row>
+      </Card.Body>
+    </Card>`,
+  },
+  {
+    title: "Text",
+    imports: `import React from 'react';`,
+    show_content: `
+    <>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </> `,
+  },
+];
+
+// Pagination Component
+export const PaginationData = [
+  {
+    title: "Pagination",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Pagination } from "react-bootstrap";`,
+    show_content: `
+      let active = 2;
+      let items = [];
+      for (let number = 1; number <= 5; number++) {
+          items.push(
+              <Pagination.Item key={number} active={number === active}>
+                  {number}
+              </Pagination.Item>,
+          );
+      }
+
+      <Card>
+        <Card.Body>
+            <Row>
+                <Col sm={12}>
+                    <Pagination>{items}</Pagination>
+                    <br />
+
+                    <Pagination size="lg">{items}</Pagination>
+                    <br />
+
+                    <Pagination size="sm" className="m-0">{items}</Pagination>
+                </Col>
+            </Row>
+        </Card.Body>
+    </Card>`,
+  },
+];
+
+// Popovers Component
+export const PopoversData = [
+  {
+    title: "Popovers",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, OverlayTrigger, Popover, Button } from "react-bootstrap";`,
+    show_content: `
+    {['top', 'right', 'bottom', 'left'].map((placement) => (
+      <OverlayTrigger
+          trigger="click"
+          key={placement}
+          placement={placement}
+          overlay={
+              <Popover id={'popover-positioned-$ = {placement}'}>
+                  <Popover.Header as="h3">{'Popover $ {placement}'}</Popover.Header>
+                  <Popover.Body>
+                      <strong>Holy guacamole!</strong> Check this info.
+                  </Popover.Body>
+              </Popover>
+          }
+      >
+          <Button variant="primary m" className="me-3">Popover on {placement}</Button>
+      </OverlayTrigger>
+  ))}`,
+  },
+];
+
+// Badge Component
+export const BadgeData = [
+  {
+    title: "Badge",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Badge, Button, Dropdown, Image, } from "react-bootstrap";
+    import { BsFillBellFill } from "react-icons/bs";
+    import { Link } from "react-router-dom";`,
+    show_content: `
+      <Row className="mb-4">
+      <Col xs={12} sm={12} md={12}>
+          <Row className="mb-2">
+              <Col xs={12} sm={12} md={7}>
+                  <h1 className="fw-medium font-22">Badge</h1>
+              </Col>
+              <Col xs={12} sm={12} md={5} className="text-end">
+                  <ViewCodeButton show={show} setShow={setShow} />
+              </Col>
+          </Row>
+      </Col>
+
+      <Col xs={12} sm={12} md={12} className="mb-5">
+          <Card>
+              <Card.Body>
+                  <Row>
+                      <Col sm={12}>
+                          <p className="font-16">Badges</p>
+                      </Col>
+                      <Col sm={12} className="mb-4">
+                          <Badge bg="primary">
+                              Primary
+                          </Badge>{' '}
+                          <Badge bg="secondary">
+                              Secondary
+                          </Badge>{' '}
+                          <Badge bg="success">
+                              Success
+                          </Badge>{' '}
+                          <Badge bg="danger">
+                              Danger
+                          </Badge>{' '}
+                          <Badge bg="warning" text="dark">
+                              Warning
+                          </Badge>{' '}
+                          <Badge bg="info">
+                              Info
+                          </Badge>{' '}
+                          <Badge bg="light" text="dark">
+                              Light
+                          </Badge>{' '}
+                          <Badge bg="dark">
+                              Dark
+                          </Badge>
+                      </Col>
+                      <Col sm={12}>
+                          <p className="font-16">Pill badges</p>
+                      </Col>
+                      <Col sm={12} className="mb-4">
+                          <Badge pill bg="primary">
+                              Primary
+                          </Badge>{' '}
+                          <Badge pill bg="secondary">
+                              Secondary
+                          </Badge>{' '}
+                          <Badge pill bg="success">
+                              Success
+                          </Badge>{' '}
+                          <Badge pill bg="danger">
+                              Danger
+                          </Badge>{' '}
+                          <Badge pill bg="warning" text="dark">
+                              Warning
+                          </Badge>{' '}
+                          <Badge pill bg="info">
+                              Info
+                          </Badge>{' '}
+                          <Badge pill bg="light" text="dark">
+                              Light
+                          </Badge>{' '}
+                          <Badge pill bg="dark">
+                              Dark
+                          </Badge>
+                      </Col>
+                      <Col sm={12}>
+                          <p className="font-16">Examples</p>
+                      </Col>
+                      <Col sm={12}>
+                          <div className="">
+                              <Button variant="primary" className="me-5">
+                                  Notifications <Badge bg="danger" shape="rounded-pill">9</Badge>
+                                  <span className="visually-hidden">unread messages</span>
+                              </Button>
+
+                              <Button color="primary" className="position-relative me-5">
+                                  Index
+                                  <Badge color="danger" shape="rounded-pill"
+                                      className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                      99+ <span className="visually-hidden">unread messages</span>
+                                  </Badge>
+                              </Button>
+
+                              <Button color="primary" className="position-relative me-5">
+                                  Profile
+                                  <Badge color="danger" shape="rounded-pill"
+                                      className="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                      <span className="visually-hidden">unread messages</span>
+                                  </Badge>
+                              </Button>
+
+                              <Link className="position-relative me-3 text-primary">
+                                  <BsFillBellFill size='30' />
+                                  <Badge color="danger" shape="rounded-pill"
+                                      className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                      9 <span className="visually-hidden">unread messages</span>
+                                  </Badge>
+                              </Link>
+                          </div>
+                      </Col>
+                  </Row>
+              </Card.Body>
+          </Card>
+      </Col>
+
+      <Col xs={12} sm={12} md={12} className="mb-2">
+          <h1 className="fw-medium font-22">Notification Dropdown</h1>
+      </Col>
+      <Col xs={12} sm={12} md={12}>
+          <Card>
+              <Card.Body>
+                  <Row>
+                      <Col xs={12} sm={12} md={12}>
+                          <Dropdown>
+                              <Dropdown.Toggle className="position-relative me-3 text-primary" variant="text-primary">
+                                  <BsFillBellFill size='30' />
+                                  <Badge color="danger" shape="rounded-pill"
+                                      className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                      9 <span className="visually-hidden">unread messages</span>
+                                  </Badge>
+                              </Dropdown.Toggle>
+                              <Dropdown.Menu>
+                                  <Dropdown.Item eventKey="1" color="primary">
+                                      <Row className="align-items-center">
+                                          <Col sm={2}>
+                                              <Image src="https://static.onecms.io/wp-content/uploads/sites/37/2018/08/15232727/farmhouse-side-table-1b990c68.jpg" 
+                                              width="40px" height="40px" roundedCircle  className="me-3"/>
+                                          </Col>
+                                          <Col sm={10}>
+                                              <small>March 12, 2022 <br></br> <span className="fw-bold">A new monthly report is ready to download!</span></small>
+                                          </Col>
+                                      </Row>
+                                  </Dropdown.Item>
+                                  <Dropdown.Item eventKey="2">
+                                      <Row className="align-items-center">
+                                          <Col sm={2}>
+                                              <Image src="https://static.onecms.io/wp-content/uploads/sites/37/2018/08/15232727/farmhouse-side-table-1b990c68.jpg" 
+                                              width="40px" height="40px" roundedCircle  className="me-3"/>
+                                          </Col>
+                                          <Col sm={10}>
+                                              <small>March 12, 2022 <br></br> <span className="fw-bold">A new monthly report is ready to download!</span></small>
+                                          </Col>
+                                      </Row>
+                                  </Dropdown.Item>
+                                  <Dropdown.Item eventKey="3">
+                                      <Row className="align-items-center">
+                                          <Col sm={2}>
+                                              <Image src="https://static.onecms.io/wp-content/uploads/sites/37/2018/08/15232727/farmhouse-side-table-1b990c68.jpg" 
+                                              width="40px" height="40px" roundedCircle  className="me-3"/>
+                                          </Col>
+                                          <Col sm={10}>
+                                              <small>March 12, 2022 <br></br> <span className="fw-bold">A new monthly report is ready to download!</span></small>
+                                          </Col>
+                                      </Row>
+                                  </Dropdown.Item>
+                                  <Dropdown.Divider />
+                                  <Dropdown.Item eventKey="4" className="text-center font-13"> Show All Alerts </Dropdown.Item>
+                              </Dropdown.Menu>
+                          </Dropdown>         
+                      </Col>
+                  </Row>
+              </Card.Body>
+          </Card>
+      </Col>
+  </Row> `,
+  },
+];
+
+// Breadcrumb Component
+export const BreadcrumbData = [
+  {
+    title: "Breadcrumb",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Breadcrumb } from "react-bootstrap";`,
+    show_content: `
+    <Card>
+      <Card.Body>
+          <Row>
+              <Col sm={12}>
+                  <p className="font-16">Type 1</p>                                    
+                  <Breadcrumb>
+                      <Breadcrumb.Item href="#" className="text-warning">Home</Breadcrumb.Item>
+                      <Breadcrumb.Item className="text-warning" href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
+                          Library
+                      </Breadcrumb.Item>
+                      <Breadcrumb.Item active>Data</Breadcrumb.Item>
+                  </Breadcrumb>
+                  <br />
+                  <p className="font-16">Type 2</p>                                    
+                  <Breadcrumb className="m-0">
+                      <Breadcrumb.Item href="#" className="text-warning">Home</Breadcrumb.Item>
+                      <Breadcrumb.Item className="text-warning" href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
+                          Library
+                      </Breadcrumb.Item>
+                      <Breadcrumb.Item active>Data</Breadcrumb.Item>
+                  </Breadcrumb>
+              </Col>
+          </Row>
+      </Card.Body>
+  </Card> `,
+  },
+];
+
+// Buttons Component
+export const ButtonsData = [
+  {
+    title: "Breadcrumb",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Button, ButtonGroup, ToggleButton, ToggleButtonGroup } from "react-bootstrap";`,
+    show_content: `
+    const [radioValue, setRadioValue] = useState('1');
+
+    const radios = [
+        { name: 'Radio 1', value: '1' },
+        { name: 'Radio 2', value: '2' },
+        { name: 'Radio 3', value: '3' },
+    ];
+    <Row className="mb-4">
+      <Col xs={12} sm={12} md={12}>
+          <Row className="mb-2">
+              <Col xs={12} sm={12} md={7}>
+                  <h1 className="fw-medium font-22">Buttons</h1>
+              </Col>
+              <Col xs={12} sm={12} md={5} className="text-end">
+                  <ViewCodeButton show={show} setShow={setShow} />
+              </Col>
+          </Row>
+      </Col>
+
+      <Col xs={12} sm={12} md={12} className="mb-5">
+          <Card>
+              <Card.Body>
+                  <Row>
+                      <Col sm={12}>
+                          <p className="font-16">Solid Buttons</p>
+                      </Col>
+                      <Col sm={12} className="mb-3">
+                          <Button variant="primary">Primary</Button>{' '}
+                          <Button variant="secondary">Secondary</Button>{' '}
+                          <Button variant="success">Success</Button>{' '}
+                          <Button variant="warning">Warning</Button>{' '}
+                          <Button variant="danger">Danger</Button>{' '}
+                          <Button variant="info">Info</Button>{' '}
+                          <Button variant="light">Light</Button>{' '}
+                          <Button variant="dark">Dark</Button>
+                          <Button variant="link">Link</Button>
+                      </Col>
+
+                      <Col sm={12}>
+                          <p className="font-16">Outline Buttons</p>
+                      </Col>
+                      <Col sm={12}>
+                          <Button variant="outline-primary">Primary</Button>{' '}
+                          <Button variant="outline-secondary">Secondary</Button>{' '}
+                          <Button variant="outline-success">Success</Button>{' '}
+                          <Button variant="outline-warning">Warning</Button>{' '}
+                          <Button variant="outline-danger">Danger</Button>{' '}
+                          <Button variant="outline-info">Info</Button>{' '}
+                          <Button variant="outline-light">Light</Button>{' '}
+                          <Button variant="outline-dark">Dark</Button>
+                      </Col>
+                  </Row>
+              </Card.Body>
+          </Card>
+      </Col>
+
+      <Col xs={12} sm={12} md={12}>
+          <h1 className="fw-medium font-22">Button group</h1>
+      </Col>
+
+      <Col xs={12} sm={12} md={12} className="mb-5">
+          <Card>
+              <Card.Body>
+                  <Row>
+                      <Col sm={6}>
+                          <p className="font-16">Basic example</p>
+                          <ButtonGroup aria-label="Basic example" className="mb-4">
+                              <Button variant="primary" className="px-3">Left</Button>
+                              <Button variant="primary" className="px-3">Middle</Button>
+                              <Button variant="primary" className="px-3">Right</Button>
+                          </ButtonGroup>
+
+                          <p className="font-16">Checkbox Button Groups</p>
+                          <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className="mb-2">
+                              <ToggleButton id="tbg-check-1" variant="outline-primary" value={1}>
+                                  Checkbox 1
+                              </ToggleButton>
+                              <ToggleButton id="tbg-check-2" variant="outline-primary" value={2}>
+                                  Checkbox 2
+                              </ToggleButton>
+                              <ToggleButton id="tbg-check-3" variant="outline-primary" value={3}>
+                                  Checkbox 3
+                              </ToggleButton>
+                          </ToggleButtonGroup>
+                      </Col>
+
+                      <Col sm={6} className="mb-3">
+                          <p className="font-16">Outline example</p>
+                          <ButtonGroup aria-label="Basic example" className="mb-4">
+                              <Button variant="outline-primary" className="px-3">Left</Button>
+                              <Button variant="outline-primary" className="px-3">Middle</Button>
+                              <Button variant="outline-primary" className="px-3">Right</Button>
+                          </ButtonGroup>
+
+                          <p className="font-16">Radio Button Groups</p>
+                          <ButtonGroup>
+                              {radios.map((radio, idx) => (
+                                  <ToggleButton
+                                      key={idx}
+                                      id={'radio-$ {idx}}
+                                      type="radio"
+                                      variant="outline-primary"
+                                      name="radio"
+                                      value={radio.value}
+                                      checked={radioValue === radio.value}
+                                      onChange={(e) => setRadioValue(e.currentTarget.value)}
+                                  >
+                                      {radio.name}
+                                  </ToggleButton>
+                              ))}
+                          </ButtonGroup>
+                      </Col>
+                  </Row>
+              </Card.Body>
+          </Card>
+      </Col>
+  </Row> `,
+  },
+];
+
+// Basic Form Component
+export const BasicFormData = [
+  {
+    title: "Breadcrumb",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Button, ButtonGroup, ToggleButton, ToggleButtonGroup } from "react-bootstrap";`,
+    show_content: ` `,
+  },
+];

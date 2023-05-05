@@ -44,6 +44,15 @@ const NavMenu = () => {
               <Link to={"/components/off-canvas"}>Off Canvas</Link>
               <Link to={"/components/scrollspy"}>Scrollspy</Link>
               <Link to={"/components/navs-tabs"}>Navs and Tabs</Link>
+              <Link to={"/components/pagination"}>Pagination</Link>
+              <Link to={"/components/popovers"}>Popovers</Link>
+              <Link to={"/components/progress"}>Progress</Link>
+              <Link to={"/components/badge"}>Badge</Link>
+              <Link to={"/components/breadcrumb"}>Breadcrumb</Link>
+              <Link to={"/components/buttons"}>Buttons</Link>
+              <Link to={"/components/basic-form"}>Basic Form</Link>
+
+              
             </div>
           </Collapse>
         </Nav.Item>
