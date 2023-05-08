@@ -51,6 +51,11 @@ const NavMenu = () => {
               <Link to={"/components/breadcrumb"}>Breadcrumb</Link>
               <Link to={"/components/buttons"}>Buttons</Link>
               <Link to={"/components/basic-form"}>Basic Form</Link>
+              <Link to={"/components/advanced-form"}>Advanced Form</Link>
+              <Link to={"/components/spinner"}>Spinner</Link>
+              <Link to={"/components/toasts"}>Toasts</Link>
+              <Link to={"/components/sweet-alert"}>Sweet Alert</Link>
+              <Link to={"/components/tooltip"}>Tooltip</Link>
 
               
             </div>

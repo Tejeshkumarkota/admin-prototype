@@ -34,6 +34,11 @@ import BadgeBootstrap from '../../pages/Components/Badge/BadgeBootstrap';
 import BreadcrumbBootstrap from '../../pages/Components/Breadcrumb/BreadcrumbBootstrap';
 import ButtonsBootstrap from '../../pages/Components/Buttons/ButtonsBootstrap';
 import BasicFormBootstrap from '../../pages/Components/BasicForm/BasicFormBootstrap';
+import AdvancedFormBootstrap from '../../pages/Components/AdvancedForm/AdvancedFormBootstrap';
+import SpinnerBootstrap from '../../pages/Components/Spinner/SpinnerBootstrap';
+import ToastsBootstrap from '../../pages/Components/Toasts/ToastsBootstrap';
+import SweetAlertBootstrap from '../../pages/Components/SweetAlert/SweetAlertBootstrap';
+import TooltipBootstrap from '../../pages/Components/Tooltip/TooltipBootstrap';
 
 const PublicRoutes = () => {
     let location = useLocation();
@@ -74,6 +79,11 @@ const PublicRoutes = () => {
                                     <Route exact path="/components/breadcrumb" element={<BreadcrumbBootstrap />}></Route>
                                     <Route exact path="/components/buttons" element={<ButtonsBootstrap />}></Route>
                                     <Route exact path="/components/basic-form" element={<BasicFormBootstrap />}></Route>
+                                    <Route exact path="/components/advanced-form" element={<AdvancedFormBootstrap />}></Route>
+                                    <Route exact path="/components/spinner" element={<SpinnerBootstrap />}></Route>
+                                    <Route exact path="/components/toasts" element={<ToastsBootstrap />}></Route>
+                                    <Route exact path="/components/sweet-alert" element={<SweetAlertBootstrap />}></Route>
+                                    <Route exact path="/components/tooltip" element={<TooltipBootstrap />}></Route>
 
                                     <Route exact path="/dashboard" element={<DashboardWrapper />}></Route>
                                     <Route exact path="/charts" element={<ChartJsWrapper />}></Route>

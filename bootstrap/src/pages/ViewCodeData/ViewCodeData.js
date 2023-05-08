@@ -2549,9 +2549,338 @@ export const ButtonsData = [
 // Basic Form Component
 export const BasicFormData = [
   {
-    title: "Breadcrumb",
+    title: "Basic Form",
     imports: `import { useState } from "react";
-    import { Row, Col, Card, Button, ButtonGroup, ToggleButton, ToggleButtonGroup } from "react-bootstrap";`,
-    show_content: ` `,
+    import { Row, Col, Card, Form, Button } from "react-bootstrap";`,
+    show_content: `
+    <Card>
+      <Card.Body>
+          <Form>
+              <Row>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4" controlId="formBasicName">
+                          <Form.Label className="text-uppercase">Name</Form.Label>
+                          <Form.Control type="text" placeholder="Enter name" />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4" controlId="formBasicEmail">
+                          <Form.Label className="text-uppercase">Email</Form.Label>
+                          <Form.Control type="email" placeholder="Enter email" />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4" controlId="formBasicMobile">
+                          <Form.Label className="text-uppercase">Mobile Number</Form.Label>
+                          <Form.Control type="number" placeholder="Enter mobile" />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4" controlId="formBasicPassword">
+                          <Form.Label className="text-uppercase">Password</Form.Label>
+                          <Form.Control type="password" placeholder="Enter password" />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Disabled input</Form.Label>
+                          <Form.Control type="text" placeholder="" disabled />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Readonly</Form.Label>
+                          <Form.Control type="text" value="Admin Template" readOnly />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Select Input</Form.Label>
+                          <Form.Select aria-label="Select Input">
+                              <option>Select your age</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                          </Form.Select>
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Range Input</Form.Label>
+                          <Form.Range />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Status</Form.Label>
+                          <div className="d-flex">
+                              <Form.Check label="Default Checkbox" type="checkbox" id="custom-Checkbox" className="me-3" />
+                              <Form.Check label="Checked" type="checkbox" id="custom-Checkbox1" checked />
+                          </div>
+                          <Form.Check label="Inline disabled checkbox" type="checkbox" id="custom-Checkbox3" disabled />
+                          <Form.Check label="Disabled Checked" type="checkbox" id="custom-Checkbox1" checked disabled />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Status</Form.Label>
+                          <div className="d-flex mb-2">
+                              <Form.Check label="Default" type="radio" id="custom-radio1" />
+                              <Form.Check label="Default" type="radio" id="custom-radio2" className="mx-3" />
+                              <Form.Check label="Slected" type="radio" id="custom-radio3" checked />
+                          </div>
+                          <div className="d-flex">
+                              <Form.Check label="Disabled" type="radio" id="custom-radio4" disabled className="me-2" />
+                              <Form.Check label="Disabled Checked" type="radio" id="custom-radio5" checked disabled />
+                          </div>
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Toggle Switch</Form.Label>
+                          <Form.Check label="Toggle this switch element" type="switch" id="custom-switch" className="mb-2" />
+                          <Form.Check label="Toggle this switch element" type="switch" id="custom-switch" disabled />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">File upload </Form.Label>
+                          <Form.Control type="file" />
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Multiple Select</Form.Label>
+                          <Form.Select multiple >
+                              <option>Select your age</option>
+                              <option value="1" selected>One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                              <option value="4">Four</option>
+                              <option value="5">Five</option>
+                              <option value="6">Six</option>
+                              <option value="7">Seven</option>
+                          </Form.Select>
+                      </Form.Group>
+                  </Col>
+                  <Col xs={12} sm={12} md={4} lg={4}>
+                      <Form.Group className="mb-4">
+                          <Form.Label className="text-uppercase">Textarea</Form.Label>
+                          <Form.Control as="textarea" rows={3} />
+                      </Form.Group>
+                  </Col>
+                  <Col className="text-end" xs={12} sm={12} md={12} lg={12}>
+                      <Button variant="outline-secondary" type="submit" className="me-3 px-3"> Cancel </Button>
+                      <Button variant="primary" type="submit" className="px-3"> Submit </Button>
+                  </Col>
+              </Row>
+          </Form>
+      </Card.Body>
+    </Card>
+    `,
+  },
+];
+
+// Advanced Form Component
+export const AdvancedFormData = [
+  {
+    title: "Advanced Form",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Form, Button } from "react-bootstrap";`,
+    show_content: `
+    
+    `,
+  },
+];
+
+// Spinner Component
+export const SpinnerData = [
+  {
+    title: "Spinner",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Spinner, Button } from "react-bootstrap";`,
+    show_content: `
+    <Card>
+      <Card.Body>
+          <Row>
+              <Col xs={12} sm={12} md={12} lg={12} className="mb-4">
+                  <p>Ajax Loader</p>
+                  <Spinner animation="border" role="status" variant="primary" className="me-5">
+                      <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                  <Spinner animation="grow" variant="primary" />
+              </Col>
+              <Col xs={12} sm={12} md={12} lg={12}>
+                  <p>Button Loading</p>
+                  <Button variant="primary" disabled className="me-3">
+                      <Spinner
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status"
+                          aria-hidden="true"
+                      />
+                      <span className="visually-hidden">Loading...</span>
+                  </Button> 
+                  <Button variant="primary" disabled>
+                      <Spinner
+                          as="span"
+                          animation="grow"
+                          size="sm"
+                          role="status"
+                          aria-hidden="true"
+                      />
+                      Loading...
+                  </Button>
+              </Col>
+          </Row>
+      </Card.Body>
+  </Card> `,
+  },
+];
+
+// Toasts Component
+export const ToastsData = [
+  {
+    title: "Toasts",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Toast, Button } from "react-bootstrap";`,
+    show_content: `
+    const [showA, setShowA] = useState(true);
+    const [showB, setShowB] = useState(true);
+
+    const toggleShowA = () => setShowA(!showA);
+    const toggleShowB = () => setShowB(!showB);
+
+    <Card>
+      <Card.Body>
+          <Row>
+              <Col md={6} className="mb-2">
+                  <Button onClick={toggleShowA} className="mb-2">
+                      Toggle Toast <strong>with</strong> Animation
+                  </Button>
+                  <Toast show={showA} onClose={toggleShowA}>
+                      <Toast.Header>
+                          <img
+                              src="holder.js/20x20?text=%20"
+                              className="rounded me-2"
+                              alt=""
+                          />
+                          <strong className="me-auto">Bootstrap</strong>
+                          <small>11 mins ago</small>
+                      </Toast.Header>
+                      <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+                  </Toast>
+              </Col>
+              <Col md={6} className="mb-2">
+                  <Button onClick={toggleShowB} className="mb-2">
+                      Toggle Toast <strong>without</strong> Animation
+                  </Button>
+                  <Toast onClose={toggleShowB} show={showB} animation={false}>
+                      <Toast.Header>
+                          <img
+                              src="holder.js/20x20?text=%20"
+                              className="rounded me-2"
+                              alt=""
+                          />
+                          <strong className="me-auto">Bootstrap</strong>
+                          <small>11 mins ago</small>
+                      </Toast.Header>
+                      <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+                  </Toast>
+              </Col>
+          </Row>
+      </Card.Body>
+  </Card> `,
+  },
+];
+
+// Sweet Alert Component
+export const SweetAlertData = [
+  {
+    title: "Sweet Alert",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, Button } from "react-bootstrap";
+    import Swal from 'react-bootstrap-sweetalert';`,
+    show_content: `
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+    };
+
+    <Card>
+      <Card.Body>
+          <Row>
+              <Col sm={12}>
+                  <Button onClick={() => setShowAlert(true)} className="px-4">Show sweet alert</Button>
+                  <Swal
+                      success
+                      show={showAlert}
+                      title="Woot!"
+                      text=" I did it!"
+                      onConfirm={handleCloseAlert}
+                      onCancel={handleCloseAlert}
+                      confirmBtnBsStyle="success"
+                      cancelBtnBsStyle="danger"
+                      confirmBtnText="Confirm"
+                      cancelBtnText="Cancel"
+                  />
+              </Col>
+          </Row>
+      </Card.Body>
+  </Card> `,
+  },
+];
+
+// Tooltip Component
+export const TooltipData = [
+  {
+    title: "Tooltip",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, OverlayTrigger, Popover, Button, Tooltip } from "react-bootstrap";`,
+    show_content: `
+    <Card>
+      <Card.Body>
+          <Row>
+              <Col sm={12} className="mb-4">
+                  <p>Popovers</p>
+                  {['top', 'right', 'bottom', 'left'].map((placement) => (
+                      <OverlayTrigger
+                          trigger="click"
+                          key={placement}
+                          placement={placement}
+                          overlay={
+                              <Popover id={'popover-positioned-$ {placement}'}>
+                                  <Popover.Header as="h3">{'Popover $ {placement}'}</Popover.Header>
+                                  <Popover.Body>
+                                      <strong>Holy guacamole!</strong> Check this info.
+                                  </Popover.Body>
+                              </Popover>
+                          }
+                      >
+                          <Button variant="primary" className="mx-3 px-4">Popover on {placement}</Button>
+                      </OverlayTrigger>
+                  ))}
+              </Col>
+              <Col sm={12}>
+                  <p>Tooltip</p>
+                  {['top', 'right', 'bottom', 'left'].map((placement) => (
+                      <OverlayTrigger
+                          key={placement}
+                          placement={placement}
+                          overlay={
+                              <Tooltip id={'tooltip- $ {placement}'}>
+                                  Tooltip on <strong>{placement}</strong>.
+                              </Tooltip>
+                          }
+                      >
+                          <Button variant="primary" className="mx-3 px-4">Tooltip on {placement}</Button>
+                      </OverlayTrigger>
+                  ))}
+              </Col>
+          </Row>
+      </Card.Body>
+  </Card> `,
   },
 ];

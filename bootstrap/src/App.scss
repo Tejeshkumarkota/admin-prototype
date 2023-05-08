@@ -600,3 +600,26 @@ input:checked + .Slider:before {
   height: 250px;
   overflow-y: scroll;
 }
+input{
+  font-size: 12px !important;
+  &::placeholder {
+    opacity: 0.5;
+    font-size: 12px;
+  }
+}
+select {
+  font-size: 12px !important;
+}
+.form-check-input{
+  width: 17px;
+  height: 17px;
+  margin-top: 0;
+}
+.form-check-label{
+  padding-left: 10px;
+}
+.form-switch{
+  .form-check-input{
+    width: 3em;
+  }
+}
