@@ -52,12 +52,11 @@ const NavMenu = () => {
               <Link to={"/components/buttons"}>Buttons</Link>
               <Link to={"/components/basic-form"}>Basic Form</Link>
               <Link to={"/components/advanced-form"}>Advanced Form</Link>
+              <Link to={"/components/add-remove-element"}>Add & Remove element</Link>
               <Link to={"/components/spinner"}>Spinner</Link>
               <Link to={"/components/toasts"}>Toasts</Link>
               <Link to={"/components/sweet-alert"}>Sweet Alert</Link>
-              <Link to={"/components/tooltip"}>Tooltip</Link>
-
-              
+              <Link to={"/components/tooltip"}>Tooltip</Link>              
             </div>
           </Collapse>
         </Nav.Item>

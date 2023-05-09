@@ -39,6 +39,7 @@ import SpinnerBootstrap from '../../pages/Components/Spinner/SpinnerBootstrap';
 import ToastsBootstrap from '../../pages/Components/Toasts/ToastsBootstrap';
 import SweetAlertBootstrap from '../../pages/Components/SweetAlert/SweetAlertBootstrap';
 import TooltipBootstrap from '../../pages/Components/Tooltip/TooltipBootstrap';
+import AddRemoveElement from '../../pages/Components/Add&RemoveElement/AddRemoveElement';
 
 const PublicRoutes = () => {
     let location = useLocation();
@@ -84,8 +85,9 @@ const PublicRoutes = () => {
                                     <Route exact path="/components/toasts" element={<ToastsBootstrap />}></Route>
                                     <Route exact path="/components/sweet-alert" element={<SweetAlertBootstrap />}></Route>
                                     <Route exact path="/components/tooltip" element={<TooltipBootstrap />}></Route>
+                                    <Route exact path="/components/add-remove-element" element={<AddRemoveElement />}></Route>
 
-                                    <Route exact path="/dashboard" element={<DashboardWrapper />}></Route>
+                                    <Route exact path="/" element={<DashboardWrapper />}></Route>
                                     <Route exact path="/charts" element={<ChartJsWrapper />}></Route>
                                     <Route exact path="/gantt-chart" element={<GanttChartWrapper />}></Route>
                                     <Route exact path="/dx-schedular" element={<DxSchedular />}></Route>

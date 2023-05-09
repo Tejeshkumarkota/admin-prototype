@@ -2884,3 +2884,13 @@ export const TooltipData = [
   </Card> `,
   },
 ];
+
+// AddRemoveElement Component
+export const AddRemoveElementData = [
+  {
+    title: "Add & Remove Element",
+    imports: `import { useState } from "react";
+    import { Row, Col, Card, OverlayTrigger, Popover, Button, Tooltip } from "react-bootstrap";`,
+    show_content: ` `,
+  },
+];
