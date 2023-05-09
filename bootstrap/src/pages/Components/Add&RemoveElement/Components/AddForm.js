@@ -68,11 +68,9 @@ export function AddForm() {
     return (
         <>
             <Row>
-                {/* {visible && ( */}
-                    <Col sm={12}>
-                        <Config />
-                    </Col>
-                {/* // )} */}
+                <Col sm={12}>
+                    <Config />
+                </Col>
                 <Col sm={12}>
                     <Button onClick={addInputForm} className="px-4">Add Values</Button>
                 </Col>

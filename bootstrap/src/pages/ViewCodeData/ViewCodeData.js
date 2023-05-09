@@ -2890,7 +2890,169 @@ export const AddRemoveElementData = [
   {
     title: "Add & Remove Element",
     imports: `import { useState } from "react";
-    import { Row, Col, Card, OverlayTrigger, Popover, Button, Tooltip } from "react-bootstrap";`,
-    show_content: ` `,
+    import { Row, Col, Card, Button, Form } from "react-bootstrap";
+    import { AddForm } from './Components/AddForm';`,
+    show_content: `
+    const [inputFields, setInputFields] = useState([{
+        fullName: '',
+    }]);
+
+    const addInputField = () => {
+        setInputFields([...inputFields, {
+            fullName: '',
+        }])
+    }
+    const removeInputFields = (index) => {
+        const rows = [...inputFields];
+        rows.splice(index, 1);
+        setInputFields(rows);
+    }
+    const handleChange = (index, evnt) => {
+        const { name, value } = evnt.target;
+        const list = [...inputFields];
+        list[index][name] = value;
+        setInputFields(list);
+    }
+
+    <Card>
+      <Card.Body>
+          <Row className="mb-5">
+              <Col sm={12}>
+                  <p className="fw-bold">No remaining element</p>
+              </Col>
+              <Col sm={12}>
+                  <AddForm />
+              </Col>
+          </Row>
+          <Row>
+              <Col sm={12}>
+                  <p className="fw-bold">Remaining with one element</p>
+              </Col>
+              <Col sm={12}>
+                  {
+                      inputFields.map((data, index) => {
+                          const { fullName, emailAddress, salary } = data;
+                          return (
+                              <Row className="row my-3 align-items-center" key={index}>
+                                  <Col sm={4}>
+                                      <Form.Group className="mb-3">
+                                          <Form.Label>Name</Form.Label>
+                                          <Form.Control
+                                              type="text"
+                                              onChange={(evnt) => handleChange(index, evnt)}
+                                              value={fullName}
+                                              name="fullName"
+                                              placeholder="Full Name"
+                                          />
+                                      </Form.Group>
+                                  </Col>
+                                  <Col sm={4}>
+                                      <Form.Group className="mb-3">
+                                          <Form.Label>Email Address</Form.Label>
+                                          <Form.Control
+                                              type="email"
+                                              onChange={(evnt) => handleChange(index, evnt)}
+                                              value={emailAddress}
+                                              name="emailAddress"
+                                              placeholder="email Address"
+                                          />
+                                      </Form.Group>
+                                  </Col>
+                                  <Col sm={4}>
+                                      {(inputFields.length !== 1) ? <Button variant="primary" onClick={removeInputFields}>x</Button>
+                                          : <Button variant="primary" onClick={removeInputFields}>x</Button>}
+                                  </Col>
+                              </Row>
+                          )
+                      })
+                  }
+              </Col>
+              <Col sm={12}>
+                  <Button onClick={addInputField} className="px-4">Add Values</Button>
+              </Col>
+          </Row>
+      </Card.Body>
+    </Card>`,
+  },
+  {
+    title: "AddForm",
+    imports: `import { useState } from "react";
+    import { Row, Col, Button, Form } from "react-bootstrap";`,
+    show_content: `
+    const [inputForm, setInputForm] = useState([ ]);
+
+    const addInputForm = () => {
+        setInputForm([...inputForm, {
+            meta: '',
+        }])
+    }
+    const removeInputForm = (index) => {
+        const rows = [...inputForm];
+        rows.splice(index, 1);
+        setInputForm(rows);
+    }
+    const handleChangeForm = (index, evnt) => {
+        const { name, value } = evnt.target;
+        const list = [...inputForm];
+        list[index][name] = value;
+        setInputForm(list);
+    }
+
+    const Config = () => {
+        return (
+        <>
+            {
+                inputForm.map((data, index) => {
+                    const { meta, values, salary } = data;
+                    return (
+                        <Row className="row my-3 align-items-center" key={index}>
+                            <Col sm={4}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Meta</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        onChange={(evnt) => handleChangeForm(index, evnt)}
+                                        value={meta}
+                                        name="meta"
+                                        placeholder="Full Name"
+                                    />
+                                </Form.Group>
+                            </Col>
+                            <Col sm={4}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Values</Form.Label>
+                                    <Form.Control
+                                        type="Values"
+                                        onChange={(evnt) => handleChangeForm(index, evnt)}
+                                        value={values}
+                                        name="values"
+                                        placeholder="values"
+                                    />
+                                </Form.Group>
+                            </Col>
+                            <Col sm={4}>
+                                {(inputForm.length !== 1) ? <Button variant="primary" onClick={removeInputForm}>x</Button>
+                                    : <Button variant="primary" onClick={removeInputForm}>x</Button>}
+                            </Col>
+                        </Row>
+                    )
+                })
+            }
+        </>
+        )
+    }
+
+    return (
+      <>
+          <Row>
+              <Col sm={12}>
+                  <Config />
+              </Col>
+              <Col sm={12}>
+                  <Button onClick={addInputForm} className="px-4">Add Values</Button>
+              </Col>
+          </Row>
+      </>
+    ); `,
   },
 ];
