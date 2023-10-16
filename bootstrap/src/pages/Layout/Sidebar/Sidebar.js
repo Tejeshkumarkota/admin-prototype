@@ -6,7 +6,7 @@ const Sidebar = () => {
         <div className="sidebar">
             <div className="logo">
                 <Link to={''}>
-                    <img src="https://res.cloudinary.com/cloudexalogic/image/upload/exa-blue-logo.png" alt="logo" />
+                    <img src="/images/logo.png" alt="logo" height="100" width="100" />
                 </Link>
             </div>
             <NavMenu />

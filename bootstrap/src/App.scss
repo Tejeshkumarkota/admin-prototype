@@ -6,7 +6,7 @@
 	--bs-body-font-size: 0.875rem;
 	--bs-form-font-size: 0.875rem;
 	--bs-gray-color:#f7f7f7;
-	--bg-primary:#356093;
+	--bg-primary:#040440;
 	--bg-secondary:#3f3e45;
 	--bg-primary-hover:#4d4d4d;
 	--bg-black: #0c0c0c;
@@ -20,6 +20,9 @@ body {
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
 }
+.text-rgb-black {
+  color: rgba(0,0,0,0.5);
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -27,7 +30,7 @@ body {
 .Wrapper {
 	display: flex;
 	.ContentWrapper {
-		background-color: #f8f9fc;
+		background-color: #F5F6F8;
 		width: 100%;
 		overflow-x: hidden;
 		display: flex;
@@ -66,16 +69,13 @@ body {
 		width: 300px;
 	}
 	.logo {
-		height: 4.375rem;
-		background-color: #fff;
+		height: 5.5rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-right: 1px solid #e5e5e5;
-		box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
 		img {
-			width: 110px;
-    		height: 35px;
+			width: 65px;
+    	height: 65px;
 		}
 	}
 	.nav {
@@ -86,7 +86,7 @@ body {
 				margin-top: 15px;
 			}
 			a {
-				color: rgba(255,255,255,0.6);
+				color: rgba(255,255,255,0.7);
 				display: flex;
 				align-items: center;
 				position: relative;
@@ -98,18 +98,26 @@ body {
 				margin-right: 1rem;
 				&:hover, &[activeClassName="active"] {
 					color: #fff;
+          background-color: #2D2D69;
+          border-radius: 8px;
 				}
+        span.icon-sidebar {
+          margin-right: 10px;
+          // border: 1px solid rgba(255,255,255,0.7);
+          border-radius: 6px;
+        }
 			}
 			.collapse, .collapsing {
-				background-color: #fff;
-				border-radius: 6px;
-				color: #000;
+        background-color: transparent;
+        border-radius: 6px;
+        color: rgba(255,255,255,0.7);
 				margin-left: 0.5rem;
 				margin-right: 0.5rem;
-				padding: 0.5rem 0.5rem;
+				padding: 0 0.5rem;
 				a {
-					color: #000;
-					padding: 5px 0px;
+					color: rgba(255, 255, 255, 0.7);
+					padding: 8px;
+          margin-left: 25px;
 				}
 			}
 			.nav-drop {
@@ -137,8 +145,14 @@ body {
 .rounded-20 {
   border-radius: 20px;
 }
+.rounded-10 {
+  border-radius: 10px;
+}
 .font-12 {
   font-size: 12px;
+}
+.font-10 {
+  font-size: 10px;
 }
 .font-29 {
   font-size: 29px;
@@ -148,6 +162,18 @@ body {
 }
 .font-18 {
   font-size: 18px;
+}
+.font-19 {
+  font-size: 19px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.font-21 {
+  font-size: 21px;
+}
+.font-24 {
+  font-size: 24px;
 }
 .font-22 {
   font-size: 22px;
@@ -212,7 +238,7 @@ a {
 .btn-outline-primary {
   &:focus,
   &:hover {
-    background-color: rgba(53, 96, 147, 0.80);
+    background-color: rgba(4, 4, 64, 0.5);
     border-color: transparent;
     color: #fff;
   }
@@ -501,10 +527,147 @@ input:checked + .Slider:before {
     }
   }  
 }
+.grid-match>* {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid-match>*>:not([class*=w]) {
+  box-sizing: border-box;
+  width: 100%;
+  flex: auto;
+}
 
 //Floor Plan Admin End //
 
 //dashboard 
+.dashboard-screen {
+  .hand-icon {
+    color: #E1BA95;
+  }
+  .dash-input-group {
+    max-width: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  .dash-table-sec {
+    .dash-input-group {
+      max-width: 100%;
+      background-color: #FAFBFF;
+      border-radius: 5px;
+      height: 34px;
+      min-width: 100%;
+      .form-control {
+        background-color: #FAFBFF;
+        height: 34px;
+      }
+      .btn {
+        svg {
+          font-size: 18px;
+          vertical-align: text-top;
+        }
+      }
+    }
+    .table {
+      thead {
+        th {
+          padding: 0.6rem 1rem;
+          color: rgba(0,0,0,0.5);
+          font-weight: 500;
+        }
+      }
+      tbody {
+        td {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .card .card-body p.card-text {
+    font-size: 12px;
+  }
+  .dash-arw-icon svg {
+    font-size: 15px;
+    vertical-align: text-bottom;
+  }
+  .icon-bg-dash {
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+  }
+  .earning-icon {
+    background-color: #E0FFEF;
+    color: #11A24D;
+    svg {
+      font-size: 45px;
+    }
+  }
+  .orders-icon {
+    background-color: #E7DBFF;
+    color: #9435CF;
+    svg {
+      font-size: 45px;
+    }
+  }
+  .bal-icon {
+    background-color: #C9F4FF;
+    color: #2464A7;
+    svg {
+      font-size: 45px;
+    }
+  }
+  .sales-icon {
+    background-color: #FFCDEF;
+    color: #B71F32;
+    svg {
+      font-size: 45px;
+    }
+  }
+  .form-select {
+    background-color: #FAFBFF;
+    max-width: 110px;
+  }
+  .dash-table-sec {
+    .form-select {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+  .donut-chart-circle {
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 35px;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+  }
+}
+
+.view-link {
+  &:hover {
+    color: #fff;
+  }
+}
+.table {
+  thead {
+    tr {
+      th {
+        padding: 1rem;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: 1rem;
+      }
+    }
+  }
+}
 .view-link {
   &:hover {
     color: #fff;
@@ -527,28 +690,6 @@ input:checked + .Slider:before {
   }
 }
 
-//dashboard 
-.view-link {
-  &:hover {
-    color: #fff;
-  }
-}
-.table {
-  thead {
-    tr {
-      th {
-        padding: 1rem;
-      }
-    }
-  }
-  tbody {
-    tr {
-      td {
-        padding: 1rem;
-      }
-    }
-  }
-}
 // Slick Slider CSS Start
 .slick-slider {
   &.blue {

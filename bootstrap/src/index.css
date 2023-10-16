@@ -10,8 +10,9 @@ code {
 }
 .inner-text{
   position: absolute;
-  right: 48%;
-  top: 57%;
-  text-align: center;
+    right: 0;
+    top: 41%;
+    text-align: center;
+    left: 0;
 }
 

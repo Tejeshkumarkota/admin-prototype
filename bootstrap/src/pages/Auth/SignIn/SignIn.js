@@ -17,7 +17,7 @@ const SignIn = () => {
                         <Card className='w-100 my-4 my-md-0 rounded-20 border-0 shadow-sm'>
                             <Card.Body className='px-3 px-sm-5 py-5'>
                                 <div className='text-center mb-3'>
-                                    <Image src="https://exalogic-store.s3.us-east-2.amazonaws.com/admin-prototype/react/images/exa-blue-logo.png" alt="Logo" fluid className='mx-auto' />
+                                    <Image src="/images/logo-colored.png" alt="Logo" height="45" width="110" fluid className='mx-auto' />
                                 </div>
                                 <div className="text-center text-uppercase">
                                     <h1 className="text-dark text-center mb-5">
@@ -39,7 +39,7 @@ const SignIn = () => {
                                     </Form.Group>
 
                                     <div className="mb-3 text-center">
-                                        <Link to='/dashboard' className='btn btn-primary font-14 rounded-20 text-uppercase w-100 fw-medium'>
+                                        <Link to='/' className='btn btn-primary font-14 rounded-20 text-uppercase w-100 fw-medium'>
                                             Sign in
                                         </Link>
                                     </div>

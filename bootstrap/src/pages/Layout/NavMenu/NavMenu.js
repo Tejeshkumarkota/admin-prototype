@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Nav, Collapse } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
+import ViewInArIcon from '@mui/icons-material/ViewInAr';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 
 const NavMenu = () => {
   const [open, setOpen] = useState(false);
-  const [open2, setOpen2] = useState(false);
-  const [open3, setOpen3] = useState(false);
   return (
     <>
       <Nav
@@ -14,10 +18,10 @@ const NavMenu = () => {
         className="flex-column"
       >
         <Nav.Item>
-          <Link 
-            to={"/dashboard"} 
-            activeClassName="active"
-          >
+          <Link to={"/"} activeClassName="active">
+            <span className="icon-sidebar">
+              <SpaceDashboardIcon />
+            </span>
             Dashboard
           </Link>
         </Nav.Item>
@@ -29,72 +33,37 @@ const NavMenu = () => {
             aria-controls="example-collapse-text"
             aria-expanded={open}
           >
-            Components
+            <span className="icon-sidebar">
+              <ViewInArIcon />
+            </span>
+            Product
           </Link>
           <Collapse in={open}>
             <div id="example-collapse-text">
-              <Link to={"/components/modal"}>Modal</Link>
-              <Link to={"/components/accordion"}>Accordion</Link>
-              <Link to={"/components/alert"}>Alerts</Link>
-              <Link to={"/components/card"}>Card</Link>
-              <Link to={"/components/carousel"}>Carousel</Link>
-              <Link to={"/components/collapse"}>Collapse</Link>
-              <Link to={"/components/dropdown"}>Dropdown</Link>
-              <Link to={"/components/list-group"}>List Group</Link>
-              <Link to={"/components/off-canvas"}>Off Canvas</Link>
-              <Link to={"/components/scrollspy"}>Scrollspy</Link>
-              <Link to={"/components/navs-tabs"}>Navs and Tabs</Link>
-              <Link to={"/components/pagination"}>Pagination</Link>
-              <Link to={"/components/popovers"}>Popovers</Link>
-              <Link to={"/components/progress"}>Progress</Link>
-              <Link to={"/components/badge"}>Badge</Link>
-              <Link to={"/components/breadcrumb"}>Breadcrumb</Link>
-              <Link to={"/components/buttons"}>Buttons</Link>
-              <Link to={"/components/basic-form"}>Basic Form</Link>
-              <Link to={"/components/advanced-form"}>Advanced Form</Link>
-              <Link to={"/components/add-remove-element"}>Add & Remove element</Link>
-              <Link to={"/components/spinner"}>Spinner</Link>
-              <Link to={"/components/toasts"}>Toasts</Link>
-              <Link to={"/components/sweet-alert"}>Sweet Alert</Link>
-              <Link to={"/components/tooltip"}>Tooltip</Link>              
+              <Link to={"/"}>Lorem</Link>
+              <Link to={"/"}>Ipsum</Link>
+              <Link to={"/"}>Test</Link>
             </div>
           </Collapse>
         </Nav.Item>
-
-        <Nav.Item>
-          <Link 
-            to={"/calendar"} 
-            activeClassName="active"
-          >
-            Calendar
-          </Link>
-        </Nav.Item>
-
-        <Nav.Item>
-          <Link 
-            to={"/kpi-template"} 
-            activeClassName="active"
-          >
-            KPI Template 
-          </Link>
-        </Nav.Item>
-
         <Nav.Item>
           <Link
             to={" "}
             className="nav-drop"
-            onClick={() => setOpen2(!open2)}
+            onClick={() => setOpen(!open)}
             aria-controls="example-collapse-text1"
-            aria-expanded={open2}
+            aria-expanded={open}
           >
-            Charts
+            <span className="icon-sidebar">
+              <PersonOutlineIcon />
+            </span>
+            Customers
           </Link>
-          <Collapse in={open2}>
+          <Collapse in={open}>
             <div id="example-collapse-text1">
-              <Link to={"/charts"}>Chart Js</Link>
-              <Link to={"/apex-chart"}>Apex Chart</Link>
-              <Link to={"/gantt-chart"}>Gantt Chart</Link>
-              <Link to={"/dx-schedular"}>DX Scheduler</Link>
+              <Link to={"/"}>Lorem</Link>
+              <Link to={"/"}>Ipsum</Link>
+              <Link to={"/"}>Test</Link>
             </div>
           </Collapse>
         </Nav.Item>
@@ -102,18 +71,62 @@ const NavMenu = () => {
           <Link
             to={" "}
             className="nav-drop"
-            onClick={() => setOpen3(!open3)}
+            onClick={() => setOpen(!open)}
             aria-controls="example-collapse-text2"
-            aria-expanded={open3}
+            aria-expanded={open}
           >
-            Floor Plan
+            <span className="icon-sidebar">
+              <AccountBalanceWalletIcon />
+            </span>
+            Income
           </Link>
-          <Collapse in={open3}>
+          <Collapse in={open}>
             <div id="example-collapse-text2">
-              <h5 className="pt-1 font-14 m-0">DX Diagram</h5>
-              <Link to={"/floor-plan-admin"}>Floor Plan Admin</Link>
-              <h5 className="pt-2 font-14 m-0">Custom Code</h5>
-              <Link to={"/floor-custom-code"}>Floor Custom Code</Link>
+              <Link to={"/"}>Lorem</Link>
+              <Link to={"/"}>Ipsum</Link>
+              <Link to={"/"}>Test</Link>
+            </div>
+          </Collapse>
+        </Nav.Item>
+        <Nav.Item>
+          <Link
+            to={" "}
+            className="nav-drop"
+            onClick={() => setOpen(!open)}
+            aria-controls="example-collapse-text3"
+            aria-expanded={open}
+          >
+            <span className="icon-sidebar">
+              <LocalOfferIcon />
+            </span>
+            Promote
+          </Link>
+          <Collapse in={open}>
+            <div id="example-collapse-text3">
+              <Link to={"/"}>Lorem</Link>
+              <Link to={"/"}>Ipsum</Link>
+              <Link to={"/"}>Test</Link>
+            </div>
+          </Collapse>
+        </Nav.Item>
+        <Nav.Item>
+          <Link
+            to={" "}
+            className="nav-drop"
+            onClick={() => setOpen(!open)}
+            aria-controls="example-collapse-text4"
+            aria-expanded={open}
+          >
+            <span className="icon-sidebar">
+              <LiveHelpIcon />
+            </span>
+            Help
+          </Link>
+          <Collapse in={open}>
+            <div id="example-collapse-text4">
+              <Link to={"/"}>Lorem</Link>
+              <Link to={"/"}>Ipsum</Link>
+              <Link to={"/"}>Test</Link>
             </div>
           </Collapse>
         </Nav.Item>
